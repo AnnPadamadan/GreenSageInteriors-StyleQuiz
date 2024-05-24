@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <lang="en" />
+  <meta charset="utf-8">
+  <title>Discover Your Dream</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src=script.js></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: MagicalSpring;
+      src: url('MagicalSpring-GOrzq.ttf');
+    }
+
+    .body {
+      margin: 0em;
+      scroll-behavior: smooth;
+    }
+
+
+    html {
+      height: 5000px;
+      width: 100%;
+      scroll-behavior: smooth;
+    }
+
+    #main-div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #title-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #title {
+      text-align: center;
+      font-family: Barlow;
+      font-weight: 200;
+      font-size: 70px;
+      margin-top: 150px;
+    }
+
+    #main-start-btn {
+      width: 50%;
+      height: 20%;
+      color: white;
+      background-color: black;
+      font-family: Barlow;
+      font-weight: 200;
+      font-size: 50px;
+      padding: 20px;
+      margin-top: 200px;
+    }
+
+    #a-div {
+      height: 2000px;
+      width: 100%;
+      scroll-behavior: smooth;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 100px;
+    }
+
+    #q-parts-div {
+      flex-direction: column;
+
+    }
+
+    #q {
+
+      text-align: center;
+      font-family: Barlow;
+      font-weight: 200;
+      font-size: 50px;
+      margin-top: 2000px;
+    }
+
+    #q-pt-2 {
+      text-align: center;
+      margin: -40px;
+      margin-bottom: 15px;
+      font-family: Qwitcher Grypen;
+      font-size: 135px;
+      font-weight: 400;
+
+    }
+
+
+    #q-caption {
+      text-align: center;
+      font-family: Barlow;
+      font-weight: 200;
+      font-size: 30px;
+      margin-top: 20px;
+    }
+
+    #floaty-div {
+      position: fixed;
+      right: 10px;
+      top: 50px;
+    }
+
+    #floatyInfoGetter {
+      /*display:flex;*/
+      flex-direction: column;
+      background-color: black;
+      color: white;
+      font-family: Barlow;
+      font-weight: 400;
+      border-radius: 500px;
+      height: 100px;
+      width: 100px;
+      font-size: 20px;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      padding: 12px;
+      display: none;
+      border: 1px solid black;
+    }
+
+    #floatyInfoGetter:hover {
+      opacity: 70%;
+    }
+
+    #floaty-ka-arrow {
+      display: none;
+      width: 25px;
+      height: 25px;
+      margin-top: 5px;
+    }
+
+    #rusure {
+      background-color: black;
+      color: white;
+      font-family: Barlow;
+      font-size: 35px;
+      width: 420px;
+      height: 220px;
+      position: fixed;
+      display: none;
+    
+      flex-direction: column;
+      top: 60%;
+      left:50%;
+
+    }
+
+    #surebuttons-div {
+      flex-direction: row;
+      width: 350px;
+      height: 200px;
+
+    }
+
+    .surebuttons {
+      border-style: none;
+      background-color: white;
+      color: black;
+      font-family: Barlow;
+      position: fixed;
+      margin-left: 100px;
+      display: none;
+      width: 100px;
+      text-align: center;
+      justify-content: center;
+      margin: 20px;
+      margin-top: 170px;
+      padding: 5px;
+      font-size: 20px;
+      top: 60%;
+    left: 50%;
+
+    }
+  
+
+    #no-goback {
+      margin-left: 200px;
+      width: 200px;
+    }
+
+    .room-imgs {
+      min-width: 250px;
+      max-width: 350px;
+      max-height: 350px;
+      margin: 10px;
+      border: 1.5px solid #999;
+      background-color: black;
+    }
+
+
+
+    .img-divs {
+      display: block;
+      flex-direction: row;
+      align-items: center;
+      /*border:2px solid black;*/
+      margin: 10px;
+      padding: 10px;
+    }
+
+
+    @keyframes hovercolor {
+      from {
+        filter: brightness(100%)
+      }
+
+      to {
+        filter: brightness(70%)
+      }
+    }
+
+    .img-divs:hover {
+      animation-name: hovercolor;
+      animation-duration: .5s;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+    }
+
+
+    #pg1-div {
+      display: auto;
+
+    }
+
+
+
+
+    /*from w3schools.com (but style has been customized)*/
+
+    /* Customize the label (the container) */
+    .container {
+      display: block;
+      position: sticky;
+      padding-left: 35px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default checkbox */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      display: flex;
+      position: absolute;
+      top: 50px;
+      left: 25px;
+      height: 25px;
+      width: 25px;
+      background-color: #ffffff;
+      border: 1.5px solid #ccc;
+
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input~.checkmark {
+      background-color: #ddd;
+      border: 1.5px solid #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked~.checkmark {
+      background-color: #000000;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked~.checkmark:after {
+      display: flex;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    /*w3schools code ends*/
+
+
+
+
+
+
+
+
+
+
+
+    /*output*/
+    #pg2-div {
+      display:none;
+     flex-direction: column;
+      text-align: center;
+
+    }
+
+    #confirm-head {
+   
+      font-family: Barlow;
+      font-weight: 100;
+      font-size: 40px;
+      margin-top: 30px;
+    }
+
+
+    #main-style {
+  
+      font-family: Barlow;
+      font-weight: 100;
+      font-size: 30px;
+      margin-bottom: 100px;
+  
+    }
+
+    .output-imgs {
+  max-width: 500px;
+      min-width: 350px;
+      margin-bottom: 50px;
+    }
+
+        .output-img-styles {
+      font-family: Barlow;
+      font-weight: 100;
+      font-size: 25px;
+
+    }
+
+    .real-output-div{
+     
+    }
+  </style>
+</head>
+<script>
+  /** 
+Scandinavian
+Coastal
+Minimalistic
+Modern farmhouse
+Contemporary
+Bohemian
+Mid Century Modern
+Rustic
+Industrial
+Modern
+White (sub of minimal/coastal/modern)
+Poppy (can be sub of boho, scandi, mcm, rustic if using plants for the pop, n maybe a little for industrial possibly)
+*/
+
+  var db = [
+    
+    {name: "one", style: "coastal, minimalistic", scand: "2", coastal: "7", min: "7", mfarm: "3", cont: "1", boho: "2", mcm: "1", rustic: "0", ind: "0", modern: "0", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_3509a137262648ec94f400d10cbf1094~mv2.jpg/v1/fill/w_130,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3509a137262648ec94f400d10cbf1094~mv2.jpg"},
+    {name: "two", style: "minimalistic, modern, darker", scand: "0", coastal: "3", min: "7", mfarm: "1", cont: "3", boho: "0", mcm: "3", rustic: "0", ind: "3", modern: "5", white: "0", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_dfe64a65eb674413bec0814b4c9cadc5~mv2.jpg/v1/fill/w_138,h_172,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_dfe64a65eb674413bec0814b4c9cadc5~mv2.jpg"},
+    {name: "three", style: "modern farmhouse", scand: "3", coastal: "1", min: "1", mfarm: "9", cont: "2", boho: "2", mcm: "1", rustic: "2", ind: "1", modern: "1", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_3df22d8890714c5782817e79edab22d2~mv2_d_3947_5913_s_4_2.jpg/v1/fill/w_130,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3df22d8890714c5782817e79edab22d2~mv2_d_3947_5913_s_4_2.jpg"},
+    {name: "four", style: "biophilic, slightly rustic, cozy", scand: "6", coastal: "5", min: "5", mfarm: "5", cont: "2", boho: "3", mcm: "0", rustic: "5", ind: "0", modern: "1", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_29197fc2131e4728a4a20ccc91c704f9~mv2.jpg/v1/fill/w_157,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_29197fc2131e4728a4a20ccc91c704f9~mv2.jpg"},
+    {name: "five", style: "modern farmhouse/boho", scand: "1", coastal: "1", min: "0", mfarm: "7", cont: "2", boho: "5", mcm: "3", rustic: "2", ind: "0", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_3d0ae360919b4ae6aec39052e38e4a83~mv2_d_3840_5760_s_4_2.jpg/v1/fill/w_96,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3d0ae360919b4ae6aec39052e38e4a83~mv2_d_3840_5760_s_4_2.jpg"},
+    {name: "six", style: "biophillic, empty space (asian zen maybe)", scand: "5", coastal: "3", min: "2", mfarm: "2", cont: "0", boho: "5", mcm: "3", rustic: "1", ind: "0", modern: "1", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_7646b0e95b714a2eb897fef7aef77284~mv2.jpg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_7646b0e95b714a2eb897fef7aef77284~mv2.jpg"},
+    {name: "seven", style: "minimalist, mid century", scand: "4", coastal: "4", min: "6", mfarm: "3", cont: "1", boho: "2", mcm: "7", rustic: "1", ind: "0", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_20bb933b21d34d5eb0fb647181d9d927~mv2.jpg/v1/fill/w_209,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_20bb933b21d34d5eb0fb647181d9d927~mv2.jpg"},
+    {name: "eight", style: "mid century, bright, slightly biophillic", scand: "8", coastal: "3", min: "1", mfarm: "1", cont: "0", boho: "3", mcm: "7", rustic: "0", ind: "0", modern: "1", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_6306136c687645af808dad2692b32514~mv2.jpeg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_6306136c687645af808dad2692b32514~mv2.jpeg"},
+    {name: "nine", style: "modern, black and white", scand: "0", coastal: "1", min: "5", mfarm: "0", cont: "2", boho: "0", mcm: "0", rustic: "0", ind: "2", modern: "10", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_a6288d15c7994a13934f6af0deeaae15~mv2_d_6720_4480_s_4_2.jpg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_a6288d15c7994a13934f6af0deeaae15~mv2_d_6720_4480_s_4_2.jpg"},
+
+    {name: "ten", style: "industrial, slightly bright, kinda modern", scand: "3", coastal: "3", min: "2", mfarm: "1", cont: "2", boho: "0", mcm: "5", rustic: "0", ind: "8", modern: "6", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_76884fd2273849b59c186b1e78934360f000.jpg/v1/fill/w_624,h_587,al_c,q_85,usm_0.33_1.00_0.00,enc_auto/11062b_76884fd2273849b59c186b1e78934360f000.jpg"},
+    {name: "eleven", style: "industrial (?), navy (not b and w)", scand: "2", coastal: "1", min: "0", mfarm: "0", cont: "1", boho: "0", mcm: "3", rustic: "0", ind: "6", modern: "5", white: "0", pop: "1", dark: "1", url: "https://static.wixstatic.com/media/11062b_49d54e475bd2472e9baf86439a9a6913~mv2_d_3825_5737_s_4_2.jpg/v1/fill/w_141,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_49d54e475bd2472e9baf86439a9a6913~mv2_d_3825_5737_s_4_2.jpg"},
+    {name: "twelve", style: "industrial, pops, something else", scand: "1", coastal: "3", min: "0", mfarm: "0", cont: "0", boho: "0", mcm: "3", rustic: "0", ind: "6", modern: "3", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/3be7d16de76f4d379db9b222f7a9a15b.jpg/v1/crop/x_3582,y_0,w_3778,h_4912/fill/w_164,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3be7d16de76f4d379db9b222f7a9a15b.jpg"},
+    {name: "thirteen", style: "biophillic, airy, mid century, WOOD", scand: "7", coastal: "4", min: "2", mfarm: "0", cont: "1", boho: "4", mcm: "4", rustic: "1", ind: "0", modern: "2", white: "1", pop: "0", dark: "0", url: "https://media.istockphoto.com/id/1310518459/photo/cabinet-for-tv-on-the-white-wall-in-living-room-with-armchair-minimal-design.jpg?s=612x612&w=0&k=20&c=8M7yn-p-1VkSBIVJ9vFUZK474FrTKeAG2iy3n-xIsGo="},
+    {name: "fourteen", style: "industrial, biophillic, slightly boho", scand: "4", coastal: "0", min: "0", mfarm: "0", cont: "1", boho: "1", mcm: "0", rustic: "0", ind: "9", modern: "3", white: "0", pop: "0", dark: "1", url: "https://bncfin.com/wp-content/uploads/2020/03/qtq80-kYhX5o.jpeg"},
+    {name: "fifteen", style: "BIOPHILLIC", scand: "5", coastal: "13", min: "1", mfarm: "0", cont: "0", boho: "3", mcm: "3", rustic: "0", ind: "0", modern: "0", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_057d3d56e1e64d66a9b54b90d720f719~mv2.jpg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_057d3d56e1e64d66a9b54b90d720f719~mv2.jpg"},
+    {name: "sixteen", style: "modern/mid century/industrial, with one pop color (green so slightly biophillic as well)", scand: "0", coastal: "0", min: "0", mfarm: "2", cont: "6", boho: "0", mcm: "6", rustic: "1", ind: "5", modern: "3", white: "0", pop: "1", dark: "1", url: "https://static.wixstatic.com/media/11062b_4ee424e52dea49f8a145fc1ff86d19f4~mv2.jpg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_4ee424e52dea49f8a145fc1ff86d19f4~mv2.jpg"},
+    {name: "seventeen", style: "industrial, messy-ish, urban, slightly biophillic, bright", scand: "3", coastal: "0", min: "0", mfarm: "1", cont: "0", boho: "1", mcm: "0", rustic: "0", ind: "9", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/49158e4a56ba4fc0880ea969ac4b83dd.jpg/v1/fill/w_223,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/49158e4a56ba4fc0880ea969ac4b83dd.jpg"},
+    {name: "eighteen", style: "bright, mid century", scand: "5", coastal: "0", min: "3", mfarm: "1", cont: "3", boho: "0", mcm: "5", rustic: "1", ind: "3", modern: "6", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_96b94ec8fc9e49a4a62a9481d71aad4c~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_96b94ec8fc9e49a4a62a9481d71aad4c~mv2.jpg"},
+    {name: "nineteen", style: "BIOPHILLIC, elegant", scand: "7", coastal: "5", min: "2", mfarm: "2", cont: "1", boho: "2", mcm: "1", rustic: "1", ind: "0", modern: "0", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/48f2b33efd674e6e9c09d534eeb30903.jpg/v1/fill/w_109,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/48f2b33efd674e6e9c09d534eeb30903.jpg"},
+
+    {name: "tw", style: "minimalistic, cozy", scand: "3", coastal: "3", min: "8", mfarm: "3", cont: "2", boho: "0", mcm: "0", rustic: "0", ind: "0", modern: "4", white: "1", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/420080f6353b48f887f85fd5ffaadaf6.jpg/v1/fill/w_161,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/420080f6353b48f887f85fd5ffaadaf6.jpg"},
+    {name: "twone", style: "BIOPHILLIC, scandi, boho, bright", scand: "9", coastal: "6", min: "0", mfarm: "3", cont: "0", boho: "7", mcm: "3", rustic: "2", ind: "0", modern: "0", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/f9f7ae46df7044c4b8d7b39c5e4e7e31.jpg/v1/fill/w_246,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/f9f7ae46df7044c4b8d7b39c5e4e7e31.jpg"},
+    {name: "twtwo", style: "minimalistic, cozy, b and w, bright", scand: "2", coastal: "5", min: "7", mfarm: "3", cont: "3", boho: "0", mcm: "0", rustic: "0", ind: "3", modern: "6", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/512b2c9683ca4677a7f23112f4361d87.jpg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/512b2c9683ca4677a7f23112f4361d87.jpg"},
+    {name: "twthree", style: "cozy, BIOPHILLIC, rustic", scand: "0", coastal: "2", min: "0", mfarm: "4", cont: "0", boho: "2", mcm: "0", rustic: "10", ind: "2", modern: "0", white: "0", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/c70b327b17014dcf98dc71eab1de9c7a.jpg/v1/fill/w_189,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c70b327b17014dcf98dc71eab1de9c7a.jpg"},
+    {name: "twfour", style: "contemporary, coastal, pops of one color (blue)", scand: "1", coastal: "6", min: "3", mfarm: "0", cont: "7", boho: "0", mcm: "0", rustic: "0", ind: "0", modern: "3", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_9c6cd88bef5e4c5caa5f9bfe015539eb~mv2.jpg/v1/fill/w_236,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_9c6cd88bef5e4c5caa5f9bfe015539eb~mv2.jpg"},
+    {name: "twfive", style: "contemporary, airy, pops of one color (blue)", scand: "1", coastal: "9", min: "3", mfarm: "3", cont: "6", boho: "0", mcm: "0", rustic: "0", ind: "0", modern: "2", white: "1", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_51ceb559b16e4299b06a2155b0e1b16a~mv2.jpg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_51ceb559b16e4299b06a2155b0e1b16a~mv2.jpg"},
+    {name: "twsix", style: "industrial/gold and velvet (slightly contemporary/posh), not too much bio", scand: "0", coastal: "1", min: "2", mfarm: "1", cont: "6", boho: "0", mcm: "2", rustic: "2", ind: "5", modern: "3", white: "1", pop: ".5", dark: "1", url: "https://static.wixstatic.com/media/11062b_75a5fa2370614df0b5033b802315193d~mv2.jpg/v1/fill/w_223,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_75a5fa2370614df0b5033b802315193d~mv2.jpg"},
+    {name: "twseven", style: "bright, one pop (pink), BIOPHILLIC, boho/scandi", scand: "8", coastal: "4", min: "2", mfarm: "3", cont: "0", boho: "7", mcm: "2", rustic: "3", ind: "0", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/0e42b3927fd344b699140899e84d2d41.jpg/v1/fill/w_246,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0e42b3927fd344b699140899e84d2d41.jpg"},
+    {name: "tweight", style: "minimalist, beige and white, calm but still biophillic", scand: "3", coastal: "6", min: "9", mfarm: "3", cont: "2", boho: "0", mcm: "0", rustic: "0", ind: "0", modern: "2", white: "1", pop: "-.5", dark: "0", url: "https://leathergallery.co.za/cdn/shop/articles/Maximising_the_space_in_your_bedroom_2_135c7fd8-ef0d-4be8-bc17-b6f7611cb98b_800x.jpg?v=1647271554"},
+    {name: "twnine", style: "bright, kids, airy, cozy, wood, soft, scandi", scand: "9", coastal: "6", min: "3", mfarm: "3", cont: "0", boho: "1", mcm: "0", rustic: "1", ind: "0", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/53c2dd0221674b2b83d411c09fa2419b.jpg/v1/fill/w_162,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/53c2dd0221674b2b83d411c09fa2419b.jpg"},
+
+    {name: "ti", style: "mid century/minimal, slight pop (various colors), slightly biophillic", scand: "4", coastal: "3", min: "2", mfarm: "1", cont: "0", boho: "0", mcm: "5", rustic: "0", ind: "2", modern: "2", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_3c30a139a8314bd0bfe6e03080aae9d9~mv2_d_4000_6000_s_4_2.jpg/v1/fill/w_105,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3c30a139a8314bd0bfe6e03080aae9d9~mv2_d_4000_6000_s_4_2.jpg"},
+    {name: "tione", style: "minimalist, medium bright, MINIMALLLY scandi", scand: "4", coastal: "5", min: "8", mfarm: "3", cont: "2", boho: "0", mcm: "1", rustic: "0", ind: "1", modern: "4", white: "1", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_0107ee8dc88d4e73b934da0abda45e32~mv2.jpeg/v1/fill/w_126,h_84,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_0107ee8dc88d4e73b934da0abda45e32~mv2.jpeg"},
+    {name: "titwo", style: "wood, one pop blue, a bit coastal, mostly minimalistic", scand: "1", coastal: "9", min: "3", mfarm: "3", cont: "6", boho: "0", mcm: "0", rustic: "0", ind: "0", modern: "2", white: "1", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/f2b033d6905c44fd99c18450a77c56dc.jpg/v1/fill/w_166,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/f2b033d6905c44fd99c18450a77c56dc.jpg"},
+    {name: "tithree", style: "Calm, minimalistic", scand: "6", coastal: "2", min: "0", mfarm: "1", cont: "1", boho: "0", mcm: "8", rustic: "2", ind: "6", modern: "2", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/8cb73eac866c405b9085bd76468fd0b5.jpg/v1/fill/w_174,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8cb73eac866c405b9085bd76468fd0b5.jpg"},
+    {name: "tifour", style: "boho, white and bright", scand: "7", coastal: "7", min: "5", mfarm: "4", cont: "1", boho: "6", mcm: "1", rustic: "0", ind: "0", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/ea8a25d15f01419fb7321f1e5346450d.jpg/v1/fill/w_158,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ea8a25d15f01419fb7321f1e5346450d.jpg"},
+    {name: "tifive", style: "dark, modern & minimalistic", scand: "1", coastal: "0", min: "4", mfarm: "0", cont: "0", boho: "0", mcm: "0", rustic: "0", ind: "9", modern: "7", white: "0", pop: "0", dark: "1", url: "https://amazingarchitecture.com/storage/2129/responsive-images/bedroom_design___media_library_original_658_370.jpg" },
+  {name: "tisix", style: "Industrial", scand: "0", coastal: "0", min: "1", mfarm: "2", cont: "1", boho: "0", mcm: "0", rustic: "3.5", ind: "9", modern: "5", white: "0", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_a15dbbd66b9f4b6d9cfe4c6ad06f819c~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_a15dbbd66b9f4b6d9cfe4c6ad06f819c~mv2.jpg"},
+  {name: "tiseven", style: "Contemporary, sleek lines", scand: "0", coastal: "0", min: "3", mfarm: "2", cont: "8", boho: "0", mcm: "0", rustic: "0", ind: "3", modern: "5.5", white: "0", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_0e78a685c628487d99389541cd8736c7~mv2.jpg/v1/fill/w_186,h_93,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_0e78a685c628487d99389541cd8736c7~mv2.jpg"},
+    {name: "tieight", style: "slightly biophilic with pop", scand: "2", coastal: "0", min: "0", mfarm: "0", cont: "0", boho: "0", mcm: "9", rustic: "1", ind: "4", modern: "2", white: "0", pop: "1.5", dark: "1", url: "https://worstroom.com/wp-content/uploads/2023/07/spare-bedroom.jpg"},
+    {name: "tinine", style: "Bright and neutral", scand: "8", coastal: "2", min: "3", mfarm: "2", cont: "0", boho: "1", mcm: "2", rustic: "1", ind: "0", modern: "4", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_83f4eb717dce476297863263bd631520~mv2.jpeg/v1/fill/w_146,h_98,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_83f4eb717dce476297863263bd631520~mv2.jpeg"},
+
+    {name: "fo", style: "Cute- Grey and pink- star themed", scand: "4", coastal: "4", min: "1", mfarm: "4", cont: "0", boho: "2", mcm: "5", rustic: "0", ind: "0", modern: "2", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_0302e6a703ef49ab8c18bdc036fb5394~mv2.jpeg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_0302e6a703ef49ab8c18bdc036fb5394~mv2.jpeg"},
+    {name: "foone", style: "Cute and simple Rainbow color scheme", scand: "4", coastal: "1", min: "0", mfarm: "4", cont: "0", boho: "3", mcm: "5", rustic: "0", ind: "0", modern: "1", white: "1", pop: "1.5", dark: "0", url: "https://static.wixstatic.com/media/11062b_b23c7ca28276413bb0e722e2e1500d48~mv2.jpeg/v1/fill/w_160,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_b23c7ca28276413bb0e722e2e1500d48~mv2.jpeg"},
+   {name: "fotwo", style: "Biophilic, neutral color scheme, earthy", scand: "7.5", coastal: "5", min: "3", mfarm: "3", cont: "0", boho: "6.5", mcm: "3", rustic: "3", ind: "0", modern: "1", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_f3f3ed178e9943eeb0fc54884badebee~mv2.jpg/v1/fill/w_179,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_f3f3ed178e9943eeb0fc54884badebee~mv2.jpg"},
+    {name: "fothree", style: "Modern White", scand: "0", coastal: "6", min: "7", mfarm: "0", cont: "2", boho: "0", mcm: "1", rustic: "0", ind: "2", modern: "10", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/09fe824f0a3b41598d6027fb0ccdf062.jpg/v1/fill/w_197,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/09fe824f0a3b41598d6027fb0ccdf062.jpg"},
+    {name: "fofour", style: "Contemporary", scand: "1", coastal: "5", min: "7", mfarm: "4", cont: "8", boho: "0", mcm: "1", rustic: "0", ind: "2", modern: "7", white: "1", url: "https://static.wixstatic.com/media/11062b_b7ecb3d3c51e4d3c9a33227ee5de5014~mv2.jpg/v1/fill/w_224,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_b7ecb3d3c51e4d3c9a33227ee5de5014~mv2.jpg"},
+    {name: "fofive", style: "contemporary", scand: "6", coastal: "3", min: "7", mfarm: "3", cont: "8", boho: "0", mcm: "2", rustic: "1", ind: "0", modern: "7", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_2d8e665184934f8eac1ed3bfc63ccc1d~mv2.jpeg/v1/fill/w_173,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_2d8e665184934f8eac1ed3bfc63ccc1d~mv2.jpeg"},
+    {name: "fosix", style: "Farmhouse, lots of storage focused", scand: "4", coastal: "7", min: "5", mfarm: "10", cont: "3", boho: "1", mcm: "0", rustic: "2", ind: "0", modern: "1", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/f8466d7be71345c9a24a5dda33b0b6e7.jpg/v1/fill/w_99,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/f8466d7be71345c9a24a5dda33b0b6e7.jpg"},
+    {name: "foseven", style: "Contemporary, gold fixtures", scand: "0", coastal: "1", min: "1", mfarm: "2", cont: "10", boho: "0", mcm: "1", rustic: "0", ind: "0", modern: "3", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_4b7349abd5794b65856caeced39e60e5~mv2.jpg/v1/fill/w_185,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_4b7349abd5794b65856caeced39e60e5~mv2.jpg"},
+    {name: "foeight", style: "Bright, airy,Woody, Walk in shower, Towel stand wall mounted, wall mounted vanity with shelves under", scand: "5", coastal: "7.5", min: "4", mfarm: "1", cont: "0", boho: "3", mcm: "1", rustic: "3", ind: "0", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/1d110d25a08446189f683b39b2cea1d5.jpg/v1/fill/w_202,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1d110d25a08446189f683b39b2cea1d5.jpg"},
+    {name: "fonine", style: "Minimalistic/Woody", scand: "1", coastal: "1", min: "10", mfarm: "1", cont: "1", boho: "0", mcm: "1", rustic: "0", ind: "2", modern: "6", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_7258b42542d4465e859cd0ba37797c29~mv2.jpeg/v1/fill/w_186,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_7258b42542d4465e859cd0ba37797c29~mv2.jpeg"},
+
+    {name: "fi", style: "Black Contemporary hotely", scand: "0", coastal: "0", min: "1", mfarm: "0", cont: "9", boho: "0", mcm: "0", rustic: "0", ind: "1", modern: "6", white: "0", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_ba4771109bae41c1a704b582d692a09d~mv2.jpg/v1/fill/w_149,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_ba4771109bae41c1a704b582d692a09d~mv2.jpg"},
+   {name: "fione", style: "Boho bright", scand: "6", coastal: "2.5", min: "1", mfarm: "4", cont: "9", boho: "10", mcm: "3", rustic: "0", ind: "0", modern: "0", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_75e7dcf3290c49b79499cf3e7d4eeab3~mv2.jpg/v1/fill/w_161,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_75e7dcf3290c49b79499cf3e7d4eeab3~mv2.jpg"},
+    {name: "fitwo", style: "Industrial but still plants", scand: "0", coastal: "0", min: "0", mfarm: "1", cont: "1", boho: "0", mcm: "0", rustic: "4", ind: "8", modern: "2", white: "0", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_36c88c7bc4f943bcb753e8a4be697038~mv2.jpg/v1/fill/w_162,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_36c88c7bc4f943bcb753e8a4be697038~mv2.jpg"},
+    {name: "fithree", style: "Modern and neutral color scheme", scand: "3", coastal: "0", min: "8", mfarm: "1", cont: "4", boho: "0", mcm: "1", rustic: "0", ind: "3", modern: "9", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_3922e285b11945cc843f488c2b0f320f~mv2.jpg/v1/fill/w_89,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3922e285b11945cc843f488c2b0f320f~mv2.jpg"},
+    {name: "fifour", style: "woody, wall mounted toilet, concealed flush tank and wall mounted faucets, minimalistic", scand: "4", coastal: "6", min: "7", mfarm: "6", cont: "1", boho: "1", mcm: "2", rustic: "3", ind: "1", modern: "3", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_9c7a93f192a04af485634ccd07440151~mv2.jpg/v1/fill/w_101,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_9c7a93f192a04af485634ccd07440151~mv2.jpg"},
+    {name: "fifive", style: "Biophilic", scand: "5", coastal: "3", min: "2", mfarm: "5", cont: "6", boho: "0", mcm: "0", rustic: "7", ind: "0", modern: "0", white: "1", pop: ".5", dark: "1", url: "https://static.wixstatic.com/media/45ed679a67e2424d8746c8414dc6ecb6.jpg/v1/fill/w_108,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/45ed679a67e2424d8746c8414dc6ecb6.jpg"},
+    {name: "fisix", style: "Contemporary Biophilic", scand: "0", coastal: "0", min: "5", mfarm: "1", cont: "7", boho: "1", mcm: "1", rustic: "1", ind: "6", modern: "4", white: "0", pop: ".5", dark: "1", url: "https://static.wixstatic.com/media/11062b_a6e7ba2b1f1c4edc89a4ddb9b6ae395a~mv2.jpg/v1/fill/w_193,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_a6e7ba2b1f1c4edc89a4ddb9b6ae395a~mv2.jpg"},
+    {name: "fiseven", style: "Biophilic Transitional", scand: "0", coastal: "0", min: "0", mfarm: "0", cont: "2", boho: "3", mcm: "3", rustic: "2", ind: "1", modern: "0", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_0489c11c62d94dbd9536929b98768265~mv2.jpg/v1/fill/w_138,h_184,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_0489c11c62d94dbd9536929b98768265~mv2.jpg"},
+    {name: "fieight", style: "Natural Wood, Modern-White and beige", scand: "7", coastal: "9", min: "10", mfarm: "3", cont: "3", boho: "0", mcm: "1", rustic: "1", ind: "3", modern: "6", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_b6e83e5c6397429294c9016ed217d442~mv2_d_4500_3000_s_4_2.jpg/v1/fill/w_182,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_b6e83e5c6397429294c9016ed217d442~mv2_d_4500_3000_s_4_2.jpg"},
+    {name: "finine", style: "Simple, Biophilic, farmhouse", scand: "5", coastal: "9", min: "9", mfarm: "5", cont: "1", boho: "0", mcm: "1", rustic: "1", ind: "1", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/bab4240320e247e09e40fcd7d9b36993.jpg/v1/fill/w_105,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bab4240320e247e09e40fcd7d9b36993.jpg"},
+
+   {name: "si", style: "Modern, white but lots of wood to contrast", scand: "4.5", coastal: "2.5", min: "4.5", mfarm: "5", cont: "0", boho: "1", mcm: "6", rustic: "3.5", ind: "1", modern: "5.5", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/8b5e364f5ded422c8dc306a54d02559a.jpg/v1/fill/w_173,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8b5e364f5ded422c8dc306a54d02559a.jpg"},
+    {name: "sione", style: "modern, black, luxury", scand: "0", coastal: "1", min: "6", mfarm: "0", cont: "6", boho: "0", mcm: "1", rustic: "0", ind: "3", modern: "7", white: "0", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/e400fe6dccf64b5fa64e2b27148a3512.jpg/v1/fill/w_150,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e400fe6dccf64b5fa64e2b27148a3512.jpg"},
+    {name: "sitwo", style: "Classic White", scand: "0", coastal: "2", min: "0", mfarm: "3", cont: "8", boho: "0", mcm: "0", rustic: "1", ind: "0", modern: "0", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_f621f3561e154aa599bbac32a14be65b~mv2.jpg/v1/fill/w_161,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_f621f3561e154aa599bbac32a14be65b~mv2.jpg"},
+    {name: "sithree", style: "Farmhouse, bright, lots of wood n random plants", scand: "7", coastal: "5", min: "2", mfarm: "3", cont: "0", boho: "3", mcm: "7", rustic: "3", ind: "0", modern: "2", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_60d37a672fe64f7d82d37c1aac28dc3b~mv2.jpg/v1/fill/w_161,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_60d37a672fe64f7d82d37c1aac28dc3b~mv2.jpg"},
+    {name: "sifour", style: "Shabby Chic, bricks, many big leafy plants", scand: "1", coastal: "1", min: "0", mfarm: "3", cont: "0", boho: "3", mcm: "0", rustic: "3", ind: "0", modern: "0", white: "0", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_88aeabcdf205464d883d51dd02fd5a28~mv2_d_3600_2400_s_4_2.jpg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_88aeabcdf205464d883d51dd02fd5a28~mv2_d_3600_2400_s_4_2.jpg"},
+    {name: "sifive", style: "Modern Farmhouse", scand: "2", coastal: "1", min: "1", mfarm: "10", cont: "2.5", boho: "0", mcm: "0", rustic: "3.5", ind: "4.5", modern: "1.5", white: "1", pop: "0", dark: "1", url: "https://static.wixstatic.com/media/11062b_012254bad63d4563ab1e1d50c709685a~mv2.jpg/v1/fill/w_177,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_012254bad63d4563ab1e1d50c709685a~mv2.jpg"},
+    {name: "sisix", style: "Modern with pop n much wood", scand: "6", coastal: "2", min: "5", mfarm: "1", cont: "0", boho: "2", mcm: "7", rustic: "1", ind: "1", modern: "7", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_50bb5d6f986e49a29e1a0ad8422ad358~mv2.jpg/v1/fill/w_107,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_50bb5d6f986e49a29e1a0ad8422ad358~mv2.jpg"},
+    {name: "siseven", style: "Modern farmhouse", scand: "2.5", coastal: "3.5", min: "5", mfarm: "8", cont: "5", boho: "0", mcm: "1", rustic: "0", ind: "3", modern: "5", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_93791ec0c9bb4af5af03ee13afcfd73e~mv2.jpg/v1/fill/w_127,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_93791ec0c9bb4af5af03ee13afcfd73e~mv2.jpg"},
+    {name: "sieight", style: "storage option in small area, modernish", scand: "3", coastal: "1", min: "0", mfarm: "3", cont: "3", boho: "5", mcm: "3", rustic: "2", ind: "1", modern: "2", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_3dd84d97fb6144aaad6ce39a4d279daa~mv2.jpg/v1/fill/w_109,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3dd84d97fb6144aaad6ce39a4d279daa~mv2.jpg"},
+    {name: "sinine", style: "Mid century modern, biophilic, bright", scand: "6", coastal: "4.5", min: "1", mfarm: "6", cont: "1", boho: "1.5", mcm: "7", rustic: "3.5", ind: "0", modern: "2", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/cb6cbf2fc50c44199a28c316377c3a78.jpg/v1/fill/w_172,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/cb6cbf2fc50c44199a28c316377c3a78.jpg"},
+
+   {name: "se", style: "Simple & Contemporary", scand: "1", coastal: "2", min: "6", mfarm: "7", cont: "7", boho: "0", mcm: "1", rustic: "1", ind: "2.5", modern: "3", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/a129d3a6a23445c78ed0949221964ed9.jpg/v1/fill/w_181,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/a129d3a6a23445c78ed0949221964ed9.jpg"},
+    {name: "seone", style: "Vintage/ Industrial, white and wood", scand: "3.5", coastal: "0", min: "0", mfarm: "1.5", cont: "0", boho: "1.5", mcm: "2", rustic: "2.5", ind: "6", modern: "0", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_8bf3f5bcde444fbcaa5c5b5bfa9ba38a~mv2.jpg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_8bf3f5bcde444fbcaa5c5b5bfa9ba38a~mv2.jpg"},
+    {name: "setwo", style: "Biophilic, bright and airy", scand: "9", coastal: "8", min: "1", mfarm: "4", cont: "1", boho: "4", mcm: "5.5", rustic: "1.5", ind: "0", modern: "2.5", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/161acbe535bc482183b7355924e103be.jpg/v1/fill/w_223,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/161acbe535bc482183b7355924e103be.jpg"},
+    {name: "sethree", style: "Simple Craftsman Style with combination of white and wood shaker doors", scand: "3", coastal: "1.5", min: "0", mfarm: "2", cont: "0", boho: "4", mcm: "4.5", rustic: "0", ind: "0", modern: "2", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_222fad5cb9984ad2a130bbc8ff114f70~mv2_d_5616_3699_s_4_2.jpg/v1/fill/w_273,h_180,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_222fad5cb9984ad2a130bbc8ff114f70~mv2_d_5616_3699_s_4_2.jpg"},
+    {name: "sefour", style: "boho, slight pop w teal, rattenny, bright, airy, calm yet not minimal", scand: "4", coastal: "8", min: "4", mfarm: "4", cont: "0", boho: "6.5", mcm: "0", rustic: ".5", ind: "0", modern: ".5", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_3f15e08e04bd4a698926aaf02880943a~mv2.jpeg/v1/fill/w_234,h_156,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3f15e08e04bd4a698926aaf02880943a~mv2.jpeg"},
+    {name: "sefive", style: "white, modern, some pops (orange), bright and airy, sliiiiightly industrial", scand: "0", coastal: "2.5", min: "4.5", mfarm: "0", cont: "0", boho: ".5", mcm: "5", rustic: "0", ind: "3", modern: "5", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/7a36d45d01a14b39b91c5ab6acec9ad7.jpg/v1/fill/w_229,h_122,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/7a36d45d01a14b39b91c5ab6acec9ad7.jpg"},
+    {name: "sesix", style: "IKEA, white, airy/spacious", scand: "8.5", coastal: "4", min: "4", mfarm: "2.5", cont: "0", boho: "2.5", mcm: "5.5", rustic: "1", ind: "0", modern: "1.5", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/0f0d9a5fcc2b4d1bbc575b1e2265f8be.jpg/v1/fill/w_203,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0f0d9a5fcc2b4d1bbc575b1e2265f8be.jpg"},
+    {name: "seseven", style: "minimalist, beige, window with plants as main focus", scand: "1", coastal: "3.5", min: "7", mfarm: "2", cont: "4", boho: "0", mcm: "2", rustic: "0", ind: "2", modern: "5", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_c7f91d6662ca4e65b6e74902720704c9~mv2.jpeg/v1/fill/w_179,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_c7f91d6662ca4e65b6e74902720704c9~mv2.jpeg"},
+    {name: "seeight", style: " dark, lots of plants, industrial", scand: "2.5", coastal: ".5", min: "1", mfarm: "5", cont: "0", boho: ".1", mcm: "0", rustic: "4", ind: "8.5", modern: "1", white: "0", pop: ".5", dark: "1", url: "https://static.wixstatic.com/media/11062b_870ebe41e0f049bca0aa2de08943f91c~mv2_d_3976_2652_s_4_2.jpg/v1/fill/w_189,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_870ebe41e0f049bca0aa2de08943f91c~mv2_d_3976_2652_s_4_2.jpg"},
+    {name: "senine", style: "coastal, beige n white, small shantam pops", scand: "5.5", coastal: "9.5", min: "1.5", mfarm: "3.5", cont: "0", boho: "5.5", mcm: "2.5", rustic: "2", ind: "0", modern: "1", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_21dbdd79270a44b8abe0d6177d2ac1f9~mv2.jpg/v1/fill/w_190,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_21dbdd79270a44b8abe0d6177d2ac1f9~mv2.jpg"},
+
+    {name: "ei", style: "slihglty bio, industrial but still bright and airy", scand: "3.5", coastal: "7", min: "5.5", mfarm: "3.5", cont: "2.5", boho: "2", mcm: "6", rustic: "0", ind: "6.5", modern: "8", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/580b4896ab1d4efb846d84f9f9e670fe.jpg/v1/fill/w_134,h_207,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/580b4896ab1d4efb846d84f9f9e670fe.jpg"},
+    {name: "eione", style: "bio, minimal, WOOD, may like some scandi", scand: "5.5", coastal: "4.5", min: "5", mfarm: "4", cont: "0", boho: "4", mcm: "4.5", rustic: "1", ind: "0", modern: "2", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_d55eb5210bad40f89a7f2141456ea386~mv2.jpg/v1/fill/w_152,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_d55eb5210bad40f89a7f2141456ea386~mv2.jpg"},
+    {name: "eitwo", style: "mid century, black and white, person may like slightly industrial", scand: "7.5", coastal: "3.5", min: "0.5", mfarm: "2", cont: "1", boho: "2", mcm: "7", rustic: "0", ind: "7", modern: "3", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/0ddd01f7de574b06b02938f24f22836a.jpg/v1/fill/w_182,h_122,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0ddd01f7de574b06b02938f24f22836a.jpg"},
+    {name: "eithree", style: "bright, coastal, airy, minimal WHITE, not super bio", scand: "1.5", coastal: "6", min: "8.5", mfarm: "1.5", cont: "1", boho: "0", mcm: "2", rustic: "0", ind: "1.5", modern: "7", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/ffe1408a8353ca4a6e4f5aa8c3d79f8c.jpg/v1/fill/w_941,h_410,al_c,q_85,enc_auto/ffe1408a8353ca4a6e4f5aa8c3d79f8c.jpg"},
+    {name: "eifour", style: "mid century, minimal, one pop, slightly bio with plenty of wood instead of only plants", scand: "5", coastal: "5", min: "4", mfarm: "3", cont: "1", boho: "0", mcm: "6", rustic: "0", ind: "1.5", modern: "2", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_803d69afb2254d049165f77654c2ae43~mv2.jpg/v1/fill/w_980,h_372,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_803d69afb2254d049165f77654c2ae43~mv2.jpg"},
+    {name: "eifive", style: "bio, minimal, WOOD", scand: "4.5", coastal: "5", min: "5", mfarm: "5.5", cont: "1", boho: "4.5", mcm: "4.5", rustic: "2", ind: "0", modern: "2", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_aa36cf8cc49b488390d27c5a101cc871~mv2.jpg/v1/fill/w_174,h_98,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_aa36cf8cc49b488390d27c5a101cc871~mv2.jpg"},
+    {name: "eisix", style: "biopihllic, orange pop, minimal-ish", scand: "4", coastal: "1", min: "5", mfarm: "3", cont: "0", boho: "3.5", mcm: "6", rustic: "3.5", ind: "0", modern: "6", white: "1", pop: ".5", dark: "1", url: "https://static.wixstatic.com/media/11062b_f560ea07caca4927a10f5e67f995ce46~mv2.jpg/v1/fill/w_152,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_f560ea07caca4927a10f5e67f995ce46~mv2.jpg"},
+    {name: "eiseven", style: "mid century, biophillic, one pop (dark mustard and same color as floor so not exactly POP but still poppy), WOOD, boho", scand: "7", coastal: "2", min: "4", mfarm: "6", cont: "0", boho: "8", mcm: "6", rustic: "2", ind: "0", modern: "2", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_03c8fd3de40e4d01a04a2c8a21f7895a~mv2.jpg/v1/fill/w_120,h_180,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_03c8fd3de40e4d01a04a2c8a21f7895a~mv2.jpg"},
+    {name: "eieight", style: "minimalist, cozy, bright, airy, wood, close to nature, but not exactly jungle in house", scand: "2.5", coastal: "8.5", min: "7", mfarm: "4", cont: "2", boho: "0", mcm: "0", rustic: "6", ind: "1", modern: "9", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/ba46766b787c47bcb1e1d359fec9d9e0.jpg/v1/fill/w_980,h_631,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba46766b787c47bcb1e1d359fec9d9e0.jpg"},
+    {name: "einine", style: "industiral/gold and posh, slight pop with earthy colors, brick", scand: "1", coastal: "0", min: "0", mfarm: "1", cont: "1", boho: "0", mcm: "1", rustic: "2", ind: "7", modern: "0", white: "0", pop: ".5", dark: "1", url: "https://static.wixstatic.com/media/11062b_2172a31fa7f843b684803479d16b76d5~mv2.jpg/v1/fill/w_180,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_2172a31fa7f843b684803479d16b76d5~mv2.jpg"},
+
+    {name: "ni", style: "bright, brick, wood, slightly bio, warm neutrals", scand: "0", coastal: "2", min: "5", mfarm: "6", cont: "0", boho: "0", mcm: "0", rustic: "8", ind: "1", modern: "4", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_8b9e1da11da84f529e4294c36e352760~mv2.jpg/v1/fill/w_175,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_8b9e1da11da84f529e4294c36e352760~mv2.jpg"},
+    {name: "nione", style: "industiral/urban, black andn beige, bright", scand: "4", coastal: "2", min: "3", mfarm: "4", cont: "0", boho: "0", mcm: "3.5", rustic: "1", ind: "6", modern: "3", white: "1", pop: ".5", dark: "0", url: "https://static.wixstatic.com/media/11062b_6f56c2c72df649dda8ce412ae6d41769~mv2.jpg/v1/fill/w_189,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_6f56c2c72df649dda8ce412ae6d41769~mv2.jpg"},
+    {name: "nitwo", style: "wood, minimal, industiralish/modernish", scand: "2", coastal: "6", min: "9", mfarm: "2", cont: "1", boho: "0", mcm: "5", rustic: "4", ind: "5", modern: "7.5", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/ca28ab858503441cb37f2f64d3a10764.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ca28ab858503441cb37f2f64d3a10764.jpg"},
+    {name: "nithree", style: "dried plants biophillic, beige and white, cozy, pretty bright, boho-ish, slightly farmhouse, paavam", scand: "6", coastal: "6", min: "4", mfarm: "9", cont: "1", boho: "4.5", mcm: "4", rustic: "4", ind: "0", modern: "1", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_910b0c82f5774d71a6a9cf62134b3f21~mv2.jpg/v1/fill/w_183,h_122,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_910b0c82f5774d71a6a9cf62134b3f21~mv2.jpg"},
+    {name: "nifour", style: "bright and airy, scandi, pretty biophillic, one very small pop, lots of white", scand: "3", coastal: "5.5", min: "6", mfarm: "2.5", cont: "4", boho: "0", mcm: "5", rustic: "0", ind: "0", modern: "7", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/06ba02cd526a4d67bd8f88d9554576f7.jpg/v1/fill/w_150,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/06ba02cd526a4d67bd8f88d9554576f7.jpg"},
+    {name: "nifive", style: "biophillic (lots plants), scandi, slightly minimal, pretty bright", scand: "6", coastal: "3", min: "3.5", mfarm: "4", cont: "0", boho: "4", mcm: "4.5", rustic: "2.5", ind: "0", modern: "4", white: "1", pop: "1", dark: "0", url: "https://static.wixstatic.com/media/11062b_7683aa5a92d246e99024029b3a3226ea~mv2.jpg/v1/fill/w_980,h_1023,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_7683aa5a92d246e99024029b3a3226ea~mv2.jpg"},
+    {name: "nisix", style: "gold, minimal, contemporary, not many plants, but still bio", scand: "1", coastal: "0", min: "5", mfarm: "4", cont: "7", boho: "0", mcm: "2", rustic: "0", ind: "2", modern: "5", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/11062b_dc8968afee424a34b57d4a68a3953ff7~mv2.jpg/v1/fill/w_112,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_dc8968afee424a34b57d4a68a3953ff7~mv2.jpg"},
+    {name: "niseven", style: "minimalist, slightly biophillic, slightly mid century, bright", scand: "3", coastal: "4", min: "7", mfarm: "4", cont: "0", boho: "1", mcm: "4", rustic: "0", ind: "1", modern: "2.5", white: "1", pop: "0", dark: "0", url: "https://static.wixstatic.com/media/44b5318e1622473b8db869fd11f66ca3.jpg/v1/fill/w_160,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/44b5318e1622473b8db869fd11f66ca3.jpg"},
+
+  ];
+//72
+var scandExImg="https://static.wixstatic.com/media/161acbe535bc482183b7355924e103be.jpg/v1/fill/w_1392,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/161acbe535bc482183b7355924e103be.jpg";
+  //59
+  var coastalExImg="https://static.wixstatic.com/media/bab4240320e247e09e40fcd7d9b36993.jpg/v1/fill/w_890,h_1334,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/bab4240320e247e09e40fcd7d9b36993.jpg";
+  
+  //31
+  var minExImg="https://static.wixstatic.com/media/11062b_0107ee8dc88d4e73b934da0abda45e32~mv2.jpeg/v1/fill/w_1392,h_928,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_0107ee8dc88d4e73b934da0abda45e32~mv2.jpeg";
+  //3
+  var mfarmExImg="https://static.wixstatic.com/media/11062b_3df22d8890714c5782817e79edab22d2~mv2_d_3947_5913_s_4_2.jpg/v1/fill/w_756,h_1132,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_3df22d8890714c5782817e79edab22d2~mv2_d_3947_5913_s_4_2.jpg";
+  //47
+  var contExImg="https://static.wixstatic.com/media/11062b_4b7349abd5794b65856caeced39e60e5~mv2.jpg/v1/fill/w_1220,h_830,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_4b7349abd5794b65856caeced39e60e5~mv2.jpg";
+  //51
+  var bohoExImg="https://static.wixstatic.com/media/11062b_75e7dcf3290c49b79499cf3e7d4eeab3~mv2.jpg/v1/fill/w_1216,h_810,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_75e7dcf3290c49b79499cf3e7d4eeab3~mv2.jpg";
+  //69
+  var mcmExImg="https://static.wixstatic.com/media/cb6cbf2fc50c44199a28c316377c3a78.jpg/v1/fill/w_1246,h_830,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cb6cbf2fc50c44199a28c316377c3a78.jpg";
+  //65
+  var rusticExImg="https://static.wixstatic.com/media/11062b_012254bad63d4563ab1e1d50c709685a~mv2.jpg/v1/fill/w_1212,h_862,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_012254bad63d4563ab1e1d50c709685a~mv2.jpg";
+ //78
+  var indExImg="https://static.wixstatic.com/media/11062b_870ebe41e0f049bca0aa2de08943f91c~mv2_d_3976_2652_s_4_2.jpg/v1/fill/w_1170,h_780,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_870ebe41e0f049bca0aa2de08943f91c~mv2_d_3976_2652_s_4_2.jpg";
+ //43
+  var modernExImg="https://static.wixstatic.com/media/09fe824f0a3b41598d6027fb0ccdf062.jpg/v1/fill/w_1120,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/09fe824f0a3b41598d6027fb0ccdf062.jpg";
+  
+  var scandPoints = 0;
+  var coastalPoints = 0;
+  var minPoints = 0;
+  var mfarmPoints = 0;
+  var contPoints = 0;
+  var bohoPoints = 0;
+  var mcmPoints = 0;
+  var rusticPoints = 0;
+  var indPoints = 0;
+  var modernPoints = 0;
+
+  var whiteness = 0;
+  var darkness = 0;
+  var popness = 0;
+
+  var fullStyles = [];
+  var returnList = [];
+  var allPoints = [];
+  function scroller(place) {
+    scrollTo(0, place);
+  }
+
+  function select(num) {
+    var img = document.getElementById(num);
+    var check = document.getElementById(num + "-cb");
+
+
+
+    if (check.checked == true) {
+      img.style.border = "1.5px solid #999";
+      check.checked = false;
+
+
+    } else if (check.checked != true) {
+      img.style.border = "3px solid #000";
+      check.checked = true;
+    }
+
+  }
+
+  function checker(num) {
+    var img = document.getElementById(num);
+    var check = document.getElementById(num + "-cb");
+
+
+    if (check.checked == true) {
+      img.style.border = "3px solid #000";
+
+    }
+    if (check.checked == false) {
+      img.style.border = "1.5px solid #999";
+    }
+  }
+
+  function showDone() {
+    var done = document.getElementById("floatyInfoGetter");
+    done.style.display = "flex";
+    var floatyarrow = document.getElementById("floaty-ka-arrow");
+    floatyarrow.style.display = "block";
+  }
+
+  function showYep() {
+    var yep = document.getElementById("rusure");
+    yep.style.display = "block";
+    var yep2 = document.getElementsByClassName("surebuttons");
+    for (var i = 0; i < yep2.length; i++) {
+      yep2[i].style.display = "flex";
+    }
+
+  }
+  function submitar() {
+    //scroller(100000)
+    var checkedlist = [];
+
+    scandPoints = 0;
+    coastalPoints = 0;
+    minPoints = 0;
+    mfarmPoints = 0;
+    contPoints = 0;
+    bohoPoints = 0;
+    mcmPoints = 0;
+    rusticPoints = 0;
+    indPoints = 0;
+    modernPoints = 0;
+
+    whiteness = 0;
+    darkness = 0;
+    popness = 0;
+
+    allPoints = [];
+
+    //taking all checked imgs and putting it in checkedlist
+    for (var i = 0; i < db.length; i++) {
+      var currentImgId = db[i].name;
+      var currentImg = document.getElementById(currentImgId);
+      var currentCbId = db[i].name + "-cb";
+      var currentCb = document.getElementById(currentCbId);
+
+
+      if (currentCb.checked == true) {
+        checkedlist.push(currentImg);
+      }
+
+    }
+
+    //going thru each of check imgs
+    for (var x = 0; x < checkedlist.length; x++) {
+      var img = checkedlist[x];
+      var id = img.id;
+      //going thru each of db's
+      for (var i = 0; i < db.length; i++) {
+        if (db[i].name == id) {
+          scandPoints += parseFloat(db[i].scand);
+          coastalPoints += parseFloat(db[i].coastal);
+          minPoints += parseFloat(db[i].min);
+          mfarmPoints += parseFloat(db[i].mfarm);
+          contPoints += parseFloat(db[i].cont);
+          bohoPoints += parseFloat(db[i].boho);
+          mcmPoints += parseFloat(db[i].mcm);
+          rusticPoints += parseFloat(db[i].rustic);
+          modernPoints += parseFloat(db[i].modern);
+          indPoints += parseFloat(db[i].ind);
+
+          whiteness += parseFloat(db[i].white);
+          darkness += parseFloat(db[i].dark);
+          popness += parseFloat(db[i].pop);
+        }
+      }
+    }
+
+
+
+    //, {white:, points:whiteness}, {dark:, points:darkness}, {pop:, points:popness}
+    allPoints.push({style: "scand", points: scandPoints}, {style: "coastal", points: coastalPoints}, {style: "min", points: minPoints}, {style: "mfarm", points: mfarmPoints}, {style: "cont", points: contPoints}, {style: "boho", points: bohoPoints}, {style: "mcm", points: mcmPoints}, {style: "rustic", points: rusticPoints}, {style: "modern", points: modernPoints}, {style: "ind", points: indPoints});
+
+    var pointlist = [];
+    var finalList = [];
+    var finalStyles = [];
+    var finalPoints = [];
+    pointlist.push(scandPoints, coastalPoints, minPoints, mfarmPoints, contPoints, bohoPoints, mcmPoints, rusticPoints, modernPoints, indPoints);
+
+    pointlist.sort(function (a, b) {return b - a});
+
+    for (var j = 0; j < 3; j++) {
+      for (var i = 0; i < allPoints.length; i++) {
+        if (pointlist[j] == allPoints[i].points) {
+          finalList.push(allPoints[i])
+          finalStyles.push(allPoints[i].style);
+          finalPoints.push(allPoints[i].points)
+        }
+      }
+    }
+
+
+    var checkedlistids = [];
+    for (var i = 0; i < checkedlist.length; i++) {
+      el = checkedlist[i].id;
+
+      checkedlistids.push(el);
+
+    }
+
+    var submitarList = [finalStyles, allPoints, checkedlistids];
+    return submitarList;
+
+
+
+  }
+
+  function getAns() {
+    showYep();
+    stylesfunc = submitar();
+    styles = stylesfunc[0];
+    fullStyles = ["", "", ""]
+    if (styles[0] == "scand") {
+      fullStyles[0] = "Scandinavian";
+    } else if (styles[0] == "coastal") {
+      fullStyles[0] = "Coastal"
+    } else if (styles[0] == "min") {
+      fullStyles[0] = "Minimalistic"
+    } else if (styles[0] == "mfarm") {
+      fullStyles[0] = "Modern Farmhouse"
+    } else if (styles[0] == "cont") {
+      fullStyles[0] = "Contemporary"
+    } else if (styles[0] == "boho") {
+      fullStyles[0] = "Bohemian"
+    } else if (styles[0] == "mcm") {
+      fullStyles[0] = "Mid-Century Modern"
+    } else if (styles[0] == "rustic") {
+      fullStyles[0] = "Rustic"
+    } else if (styles[0] == "ind") {
+      fullStyles[0] = "Industrial"
+    } else if (styles[0] == "modern") {
+      fullStyles[0] = "Modern"
+    }
+
+    if (styles[1] == "scand") {
+      fullStyles[1] = "Scandinavian";
+    } else if (styles[1] == "coastal") {
+      fullStyles[1] = "Coastal"
+    } else if (styles[1] == "min") {
+      fullStyles[1] = "Minimalistic"
+    } else if (styles[1] == "mfarm") {
+      fullStyles[1] = "Modern Farmhouse"
+    } else if (styles[1] == "cont") {
+      fullStyles[1] = "Contemporary"
+    } else if (styles[1] == "boho") {
+      fullStyles[1] = "Bohemian"
+    } else if (styles[1] == "mcm") {
+      fullStyles[1] = "Mid-Century Modern"
+    } else if (styles[1] == "rustic") {
+      fullStyles[1] = "Rustic"
+    } else if (styles[1] == "ind") {
+      fullStyles[1] = "Industrial"
+    } else if (styles[1] == "modern") {
+      fullStyles[1] = "Modern"
+    }
+
+    if (styles[2] == "scand") {
+      fullStyles[2] = "Scandinavian";
+    } else if (styles[2] == "coastal") {
+      fullStyles[2] = "Coastal"
+    } else if (styles[2] == "min") {
+      fullStyles[2] = "Minimalistic"
+    } else if (styles[2] == "mfarm") {
+      fullStyles[2] = "Modern Farmhouse"
+    } else if (styles[2] == "cont") {
+      fullStyles[2] = "Contemporary"
+    } else if (styles[2] == "boho") {
+      fullStyles[2] = "Bohemian"
+    } else if (styles[2] == "mcm") {
+      fullStyles[2] = "Mid-Century Modern"
+    } else if (styles[2] == "rustic") {
+      fullStyles[2] = "Rustic"
+    } else if (styles[2] == "ind") {
+      fullStyles[2] = "Industrial"
+    } else if (styles[2] == "modern") {
+      fullStyles[2] = "Modern"
+    }
+
+    mainStyle = fullStyles[0];
+
+    subStyle1 = fullStyles[1];
+    subStyle2 = fullStyles[2];
+
+    /*returnList=["top three", [mainStyle, subStyle1, subStyle2], "all rankings", stylesfunc[1], "picked imgs", stylesfunc[2]];*/
+    /* returnList=["top three", [mainStyle, subStyle1, subStyle2], "picked imgs", stylesfunc[2]];*/
+    returnStyles = [mainStyle, " " + subStyle1, " " + subStyle2];
+    returnImgs = [stylesfunc[2]];
+
+    localStorage.setItem("rstyles", returnStyles);
+    localStorage.setItem("rimgs", returnImgs);
+  }
+
+
+  function retrieve() {
+document.getElementById("floaty-div").style.display="none";
+    document.getElementById("pg1-div").style.display = "none";
+    document.getElementById("pg2-div").style.display = "flex";
+    var styles = localStorage.getItem("rstyles"); 
+    var imgs = localStorage.getItem("rimgs");
+    document.getElementById("main-style").innerHTML = styles;
+    //+\n\n Imgs for costumer data (need to send to us, they no see): "+imgs
+
+    var yep = document.getElementById("rusure");
+    yep.style.display = "none";
+    var yep2 = document.getElementsByClassName("surebuttons");
+    for (var i = 0; i < yep2.length; i++) {
+      yep2[i].style.display = "none";
+    }
+
+    //finding images
+    /*
+    templist=imgs.split(", ");
+    imgslist=templist[0].split(",");
+    for(var currentCheckedImg=0; currentCheckedImg<=imgslist.length-1;currentCheckedImg++){
+    for (var currentDbImg = 0; currentDbImg <= db.length-1; currentDbImg++) {
+      
+      if (imgslist[currentCheckedImg] == db[currentDbImg].name) {
+        document.getElementById("output-img"+ (currentCheckedImg+1).toString()).src = db[currentDbImg].url;
+      }
+    }
+    }*/
+
+    console.log(styles.split(", ")[0])
+    var styleslist=styles.split(", ");
+    for(var i=0;i<=styleslist.length-1;i++){
+      if (styleslist[i] == "Scandinavian") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Scandinavian";
+      document.getElementById("output-img"+(i+1).toString()).src=scandExImg;
+    } else if (styleslist[i] == "Coastal") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Coastal";
+      document.getElementById("output-img"+(i+1).toString()).src=coastalExImg;
+    } else if (styleslist[i] == "Minimalistic") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Minimalistic";
+      document.getElementById("output-img"+(i+1).toString()).src=minExImg;
+    } else if (styleslist[i] == "Modern Farmhouse") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Modern Farmhouse";
+    document.getElementById("output-img"+(i+1).toString()).src=mfarmExImg;
+    } else if (styleslist[i] == "Contemporary") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Contemporary";
+      document.getElementById("output-img"+(i+1).toString()).src=contExImg;
+    } else if (styleslist[i] == "Bohemian") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Bohemian";
+      document.getElementById("output-img"+(i+1).toString()).src=bohoExImg;
+    } else if (styleslist[i] == "Mid-Century Modern") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Mid-Century Modern";
+      document.getElementById("output-img"+(i+1).toString()).src=mcmExImg;
+    } else if (styleslist[i] == "Rustic") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Rustic";
+      document.getElementById("output-img"+(i+1).toString()).src=rusticExImg;
+    } else if (styleslist[i] == "Industrial") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Industrial";
+      document.getElementById("output-img"+(i+1).toString()).src=indExImg;
+    } else if (styleslist[i] == "Modern") {
+        document.getElementById("output-img-style"+(i+1).toString()).innerHTML="Modern";
+      document.getElementById("output-img"+(i+1).toString()).src=modernExImg;
+    }
+    }
+  }
+
+  function goToFirstQ() {
+    scroller(2500);
+  }
+  function nogoback() {
+    scroller(2550)
+    var yep = document.getElementById("rusure");
+    yep.style.display = "none";
+    var yep2 = document.getElementsByClassName("surebuttons");
+    for (var i = 0; i < yep2.length; i++) {
+      yep2[i].style.display = "none";
+    }
+  }
+</script>
+
+<body>
+  <div id="main-div">
+    <div id="floaty-div">
+      <button type="button" id="floatyInfoGetter" onclick="getAns()">I'm Done!<ion-icon id="floaty-ka-arrow"
+          name="arrow-forward-outline"></ion-icon></button>
+    </div>
+
+    <div id="rusurediv">
+      <button id="rusure" type="button">
+        <p>Are you sure you want to submit?</p>
+        <div id="surebuttons-div">
+          <button href="pg2-div" type="button" onclick="retrieve(), scroller(0)"
+              class="surebuttons" id="yep">Yep!</button>
+          <button type="button" onclick="nogoback()" class="surebuttons" id="no-goback">No, I want to go back.</button>
+        </div>
+      </button>
+    </div>
+
+     <div id="pg1-div" class="page">
+      <div id="title-div">
+        <h1 id="title">Discover Your Dream</h1>
+        <button type="button" id="main-start-btn" onclick="goToFirstQ(), showDone()">Go</button>
+      </div>
+
+      <div id="form-div">
+
+
+        <div id="q1-div">
+          <div id="q-div">
+            <div id="q-pts-div">
+              <h2 id="q">Pick the rooms that you find</h2>
+              <h2 id="q-pt-2"> Sensational</h2>
+              <h4 id="q-caption">- as many or as few as you'd like to</h4>
+            </div>
+          </div>
+          <div id="a-div">
+
+
+            <div id="one-div" class="img-divs">
+              <label class="container">
+                <input name="one" type="checkbox" value="one" id="one-cb" class="checkboxes" onclick="checker('one')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="one">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_3509a137262648ec94f400d10cbf1094~mv2.jpg/v1/fill/w_130,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3509a137262648ec94f400d10cbf1094~mv2.jpg"
+                  id="one" class="room-imgs" onclick="select('one')" />
+              </label>
+            </div>
+
+            <div id="two-div" class="img-divs">
+              <label class="container">
+                <input name="two" type="checkbox" value="two" id="two-cb" class="checkboxes" onclick="checker('two')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="two">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_dfe64a65eb674413bec0814b4c9cadc5~mv2.jpg/v1/fill/w_138,h_172,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_dfe64a65eb674413bec0814b4c9cadc5~mv2.jpg"
+                  id="two" class="room-imgs" onclick="select('two')" />
+              </label>
+            </div>
+
+            <div id="three-div" class="img-divs">
+              <label class="container">
+                <input name="three" type="checkbox" value="three" id="three-cb" class="checkboxes"
+                  onclick="checker('three')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="three">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_3df22d8890714c5782817e79edab22d2~mv2_d_3947_5913_s_4_2.jpg/v1/fill/w_130,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3df22d8890714c5782817e79edab22d2~mv2_d_3947_5913_s_4_2.jpg"
+                  id="three" class="room-imgs" onclick="select('three')" />
+              </label>
+            </div>
+
+            <div id="four-div" class="img-divs">
+              <label class="container">
+                <input name="four" type="checkbox" value="four" id="four-cb" class="checkboxes"
+                  onclick="checker('four')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="four">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_29197fc2131e4728a4a20ccc91c704f9~mv2.jpg/v1/fill/w_157,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_29197fc2131e4728a4a20ccc91c704f9~mv2.jpg"
+                  id="four" class="room-imgs" onclick="select('four')" />
+              </label>
+            </div>
+
+            <div id="five-div" class="img-divs">
+              <label class="container">
+                <input name="five" type="checkbox" value="five" id="five-cb" class="checkboxes"
+                  onclick="checker('five')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="five">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_3d0ae360919b4ae6aec39052e38e4a83~mv2_d_3840_5760_s_4_2.jpg/v1/fill/w_96,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3d0ae360919b4ae6aec39052e38e4a83~mv2_d_3840_5760_s_4_2.jpg"
+                  id="five" class="room-imgs" onclick="select('five')" />
+              </label>
+            </div>
+            
+            <div id="six-div" class="img-divs">
+              <label class="container">
+                <input name="six" type="checkbox" value="six" id="six-cb" class="checkboxes" onclick="checker('six')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="six">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_7646b0e95b714a2eb897fef7aef77284~mv2.jpg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_7646b0e95b714a2eb897fef7aef77284~mv2.jpg"
+                  id="six" class="room-imgs" onclick="select('six')" />
+              </label>
+            </div>
+          
+            <div id="seven-div" class="img-divs">
+              <label class="container">
+                <input name="seven" type="checkbox" value="seven" id="seven-cb" class="checkboxes"
+                  onclick="checker('seven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="seven">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_20bb933b21d34d5eb0fb647181d9d927~mv2.jpg/v1/fill/w_209,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_20bb933b21d34d5eb0fb647181d9d927~mv2.jpg"
+                  id="seven" class="room-imgs" onclick="select('seven')" />
+              </label>
+            </div>
+          
+            <div id="eight-div" class="img-divs">
+              <label class="container">
+                <input name="eight" type="checkbox" value="eight" id="eight-cb" class="checkboxes"
+                  onclick="checker('eight')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eight">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_6306136c687645af808dad2692b32514~mv2.jpeg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_6306136c687645af808dad2692b32514~mv2.jpeg"
+                  id="eight" class="room-imgs" onclick="select('eight')" />
+              </label>
+            </div>
+          
+            <div id="nine-div" class="img-divs">
+              <label class="container">
+                <input name="nine" type="checkbox" value="nine" id="nine-cb" class="checkboxes"
+                  onclick="checker('nine')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="nine">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_a6288d15c7994a13934f6af0deeaae15~mv2_d_6720_4480_s_4_2.jpg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_a6288d15c7994a13934f6af0deeaae15~mv2_d_6720_4480_s_4_2.jpg"
+                  id="nine" class="room-imgs" onclick="select('nine')" />
+              </label>
+            </div>
+          
+            <div id="ten-div" class="img-divs">
+              <label class="container">
+                <input name="ten" type="checkbox" value="ten" id="ten-cb" class="checkboxes" onclick="checker('ten')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="ten">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_76884fd2273849b59c186b1e78934360f000.jpg/v1/fill/w_624,h_587,al_c,q_85,usm_0.33_1.00_0.00,enc_auto/11062b_76884fd2273849b59c186b1e78934360f000.jpg"
+                  id="ten" class="room-imgs" onclick="select('ten')" />
+              </label>
+            </div>
+     
+
+            <div id="eleven-div" class="img-divs">
+              <label class="container">
+                <input name="eleven" type="checkbox" value="eleven" id="eleven-cb" class="checkboxes"
+                  onclick="checker('eleven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eleven">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_49d54e475bd2472e9baf86439a9a6913~mv2_d_3825_5737_s_4_2.jpg/v1/fill/w_141,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_49d54e475bd2472e9baf86439a9a6913~mv2_d_3825_5737_s_4_2.jpg"
+                  id="eleven" class="room-imgs" onclick="select('eleven')" />
+              </label>
+            </div>
+
+            <div id="twelve-div" class="img-divs">
+              <label class="container">
+                <input name="twelve" type="checkbox" value="twelve" id="twelve-cb" class="checkboxes"
+                  onclick="checker('twelve')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twelve">
+                <img
+                  src="https://static.wixstatic.com/media/3be7d16de76f4d379db9b222f7a9a15b.jpg/v1/crop/x_3582,y_0,w_3778,h_4912/fill/w_164,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3be7d16de76f4d379db9b222f7a9a15b.jpg"
+                  id="twelve" class="room-imgs" onclick="select('twelve')" />
+              </label>
+            </div>
+
+            <div id="thirteen-div" class="img-divs">
+              <label class="container">
+                <input name="thirteen" type="checkbox" value="thirteen" id="thirteen-cb" class="checkboxes"
+                  onclick="checker('thirteen')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="thirteen">
+                <img
+                  src="https://media.istockphoto.com/id/1310518459/photo/cabinet-for-tv-on-the-white-wall-in-living-room-with-armchair-minimal-design.jpg?s=612x612&w=0&k=20&c=8M7yn-p-1VkSBIVJ9vFUZK474FrTKeAG2iy3n-xIsGo="
+                  id="thirteen" class="room-imgs" onclick="select('thirteen')" />
+              </label>
+            </div>
+
+            <div id="fourteen-div" class="img-divs">
+              <label class="container">
+                <input name="fourteen" type="checkbox" value="fourteen" id="fourteen-cb" class="checkboxes"
+                  onclick="checker('fourteen')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fourteen">
+                <img src="https://bncfin.com/wp-content/uploads/2020/03/qtq80-kYhX5o.jpeg" id="fourteen"
+                  class="room-imgs" onclick="select('fourteen')" />
+              </label>
+            </div>
+
+            <div id="fifteen-div" class="img-divs">
+              <label class="container">
+                <input name="fifteen" type="checkbox" value="fifteen" id="fifteen-cb" class="checkboxes"
+                  onclick="checker('fifteen')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fifteen">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_057d3d56e1e64d66a9b54b90d720f719~mv2.jpg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_057d3d56e1e64d66a9b54b90d720f719~mv2.jpg"
+                  id="fifteen" class="room-imgs" onclick="select('fifteen')" />
+              </label>
+            </div>
+
+            <div id="sixteen-div" class="img-divs">
+              <label class="container">
+                <input name="sixteen" type="checkbox" value="sixteen" id="sixteen-cb" class="checkboxes"
+                  onclick="checker('sixteen')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sixteen">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_4ee424e52dea49f8a145fc1ff86d19f4~mv2.jpg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_4ee424e52dea49f8a145fc1ff86d19f4~mv2.jpg"
+                  id="sixteen" class="room-imgs" onclick="select('sixteen')" />
+              </label>
+            </div>
+
+            <div id="seventeen-div" class="img-divs">
+              <label class="container">
+                <input name="seventeen" type="checkbox" value="seventeen" id="seventeen-cb" class="checkboxes"
+                  onclick="checker('seventeen')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="seventeen">
+                <img
+                  src="https://static.wixstatic.com/media/49158e4a56ba4fc0880ea969ac4b83dd.jpg/v1/fill/w_223,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/49158e4a56ba4fc0880ea969ac4b83dd.jpg"
+                  id="seventeen" class="room-imgs" onclick="select('seventeen')" />
+              </label>
+            </div>
+
+            <div id="eighteen-div" class="img-divs">
+              <label class="container">
+                <input name="eighteen" type="checkbox" value="eighteen" id="eighteen-cb" class="checkboxes"
+                  onclick="checker('eighteen')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eighteen">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_96b94ec8fc9e49a4a62a9481d71aad4c~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_96b94ec8fc9e49a4a62a9481d71aad4c~mv2.jpg"
+                  id="eighteen" class="room-imgs" onclick="select('eighteen')" />
+              </label>
+            </div>
+
+            <div id="nineteen-div" class="img-divs">
+              <label class="container">
+                <input name="nineteen" type="checkbox" value="nineteen" id="nineteen-cb" class="checkboxes"
+                  onclick="checker('nineteen')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="nineteen">
+                <img
+                  src="https://static.wixstatic.com/media/48f2b33efd674e6e9c09d534eeb30903.jpg/v1/fill/w_109,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/48f2b33efd674e6e9c09d534eeb30903.jpg"
+                  id="nineteen" class="room-imgs" onclick="select('nineteen')" />
+              </label>
+            </div>
+
+            <div id="tw-div" class="img-divs">
+              <label class="container">
+                <input name="tw" type="checkbox" value="tw" id="tw-cb" class="checkboxes" onclick="checker('tw')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tw">
+                <img
+                  src="https://static.wixstatic.com/media/420080f6353b48f887f85fd5ffaadaf6.jpg/v1/fill/w_161,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/420080f6353b48f887f85fd5ffaadaf6.jpg"
+                  id="tw" class="room-imgs" onclick="select('tw')" />
+              </label>
+            </div>
+
+            <div id="twone-div" class="img-divs">
+              <label class="container">
+                <input name="twone" type="checkbox" value="twone" id="twone-cb" class="checkboxes"
+                  onclick="checker('twone')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twone">
+                <img
+                  src="https://static.wixstatic.com/media/f9f7ae46df7044c4b8d7b39c5e4e7e31.jpg/v1/fill/w_246,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/f9f7ae46df7044c4b8d7b39c5e4e7e31.jpg"
+                  id="twone" class="room-imgs" onclick="select('twone')" />
+              </label>
+            </div>
+
+            <div id="twtwo-div" class="img-divs">
+              <label class="container">
+                <input name="twtwo" type="checkbox" value="twtwo" id="twtwo-cb" class="checkboxes"
+                  onclick="checker('twtwo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twtwo">
+                <img
+                  src="https://static.wixstatic.com/media/512b2c9683ca4677a7f23112f4361d87.jpg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/512b2c9683ca4677a7f23112f4361d87.jpg"
+                  id="twtwo" class="room-imgs" onclick="select('twtwo')" />
+              </label>
+            </div>
+
+            <div id="twthree-div" class="img-divs">
+              <label class="container">
+                <input name="twthree" type="checkbox" value="twthree" id="twthree-cb" class="checkboxes"
+                  onclick="checker('twthree')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twthree">
+                <img
+                  src="https://static.wixstatic.com/media/c70b327b17014dcf98dc71eab1de9c7a.jpg/v1/fill/w_189,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c70b327b17014dcf98dc71eab1de9c7a.jpg"
+                  id="twthree" class="room-imgs" onclick="select('twthree')" />
+              </label>
+            </div>
+
+            <div id="twfour-div" class="img-divs">
+              <label class="container">
+                <input name="twfour" type="checkbox" value="twfour" id="twfour-cb" class="checkboxes"
+                  onclick="checker('twfour')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twfour">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_9c6cd88bef5e4c5caa5f9bfe015539eb~mv2.jpg/v1/fill/w_236,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_9c6cd88bef5e4c5caa5f9bfe015539eb~mv2.jpg"
+                  id="twfour" class="room-imgs" onclick="select('twfour')" />
+              </label>
+            </div>
+
+            <div id="twfive-div" class="img-divs">
+              <label class="container">
+                <input name="twfive" type="checkbox" value="twfive" id="twfive-cb" class="checkboxes"
+                  onclick="checker('twfive')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twfive">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_51ceb559b16e4299b06a2155b0e1b16a~mv2.jpg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_51ceb559b16e4299b06a2155b0e1b16a~mv2.jpg"
+                  id="twfive" class="room-imgs" onclick="select('twfive')" />
+              </label>
+            </div>
+
+            <div id="twsix-div" class="img-divs">
+              <label class="container">
+                <input name="twsix" type="checkbox" value="twsix" id="twsix-cb" class="checkboxes"
+                  onclick="checker('twsix')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twsix">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_75a5fa2370614df0b5033b802315193d~mv2.jpg/v1/fill/w_223,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_75a5fa2370614df0b5033b802315193d~mv2.jpg"
+                  id="twsix" class="room-imgs" onclick="select('twsix')" />
+              </label>
+            </div>
+
+            <div id="twseven-div" class="img-divs">
+              <label class="container">
+                <input name="twseven" type="checkbox" value="twseven" id="twseven-cb" class="checkboxes"
+                  onclick="checker('twseven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twseven">
+                <img
+                  src="https://static.wixstatic.com/media/0e42b3927fd344b699140899e84d2d41.jpg/v1/fill/w_246,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0e42b3927fd344b699140899e84d2d41.jpg"
+                  id="twseven" class="room-imgs" onclick="select('twseven')" />
+              </label>
+            </div>
+
+            <div id="tweight-div" class="img-divs">
+              <label class="container">
+                <input name="tweight" type="checkbox" value="tweight" id="tweight-cb" class="checkboxes"
+                  onclick="checker('tweight')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tweight">
+                <img
+                  src="https://leathergallery.co.za/cdn/shop/articles/Maximising_the_space_in_your_bedroom_2_135c7fd8-ef0d-4be8-bc17-b6f7611cb98b_800x.jpg?v=1647271554"
+                  id="tweight" class="room-imgs" onclick="select('tweight')" />
+              </label>
+            </div>
+
+            <div id="twnine-div" class="img-divs">
+              <label class="container">
+                <input name="twnine" type="checkbox" value="twnine" id="twnine-cb" class="checkboxes"
+                  onclick="checker('twnine')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="twnine">
+                <img
+                  src="https://static.wixstatic.com/media/53c2dd0221674b2b83d411c09fa2419b.jpg/v1/fill/w_162,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/53c2dd0221674b2b83d411c09fa2419b.jpg"
+                  id="twnine" class="room-imgs" onclick="select('twnine')" />
+              </label>
+            </div>
+
+            <div id="ti-div" class="img-divs">
+              <label class="container">
+                <input name="ti" type="checkbox" value="ti" id="ti-cb" class="checkboxes" onclick="checker('ti')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="ti">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_3c30a139a8314bd0bfe6e03080aae9d9~mv2_d_4000_6000_s_4_2.jpg/v1/fill/w_105,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3c30a139a8314bd0bfe6e03080aae9d9~mv2_d_4000_6000_s_4_2.jpg"
+                  id="ti" class="room-imgs" onclick="select('ti')" />
+              </label>
+            </div>
+
+            <div id="tione-div" class="img-divs">
+              <label class="container">
+                <input name="tione" type="checkbox" value="tione" id="tione-cb" class="checkboxes"
+                  onclick="checker('tione')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tione">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_0107ee8dc88d4e73b934da0abda45e32~mv2.jpeg/v1/fill/w_126,h_84,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_0107ee8dc88d4e73b934da0abda45e32~mv2.jpeg"
+                  id="tione" class="room-imgs" onclick="select('tione')" />
+              </label>
+            </div>
+
+            <div id="titwo-div" class="img-divs">
+              <label class="container">
+                <input name="titwo" type="checkbox" value="titwo" id="titwo-cb" class="checkboxes"
+                  onclick="checker('titwo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="titwo">
+                <img
+                  src="https://static.wixstatic.com/media/f2b033d6905c44fd99c18450a77c56dc.jpg/v1/fill/w_166,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/f2b033d6905c44fd99c18450a77c56dc.jpg"
+                  id="titwo" class="room-imgs" onclick="select('titwo')" />
+              </label>
+            </div>
+
+            <div id="tithree-div" class="img-divs">
+              <label class="container">
+                <input name="tithree" type="checkbox" value="tithree" id="tithree-cb" class="checkboxes"
+                  onclick="checker('tithree')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tithree">
+                <img
+                  src="https://static.wixstatic.com/media/8cb73eac866c405b9085bd76468fd0b5.jpg/v1/fill/w_174,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8cb73eac866c405b9085bd76468fd0b5.jpg"
+                  id="tithree" class="room-imgs" onclick="select('tithree')" />
+              </label>
+            </div>
+
+            <div id="tifour-div" class="img-divs">
+              <label class="container">
+                <input name="tifour" type="checkbox" value="tifour" id="tifour-cb" class="checkboxes"
+                  onclick="checker('tifour')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tifour">
+                <img
+                  src="https://static.wixstatic.com/media/ea8a25d15f01419fb7321f1e5346450d.jpg/v1/fill/w_158,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ea8a25d15f01419fb7321f1e5346450d.jpg"
+                  id="tifour" class="room-imgs" onclick="select('tifour')" />
+              </label>
+            </div>
+
+            <div id="tifive-div" class="img-divs">
+              <label class="container">
+                <input name="tifive" type="checkbox" value="tifive" id="tifive-cb" class="checkboxes"
+                  onclick="checker('tifive')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tifive">
+                <img
+                  src="https://amazingarchitecture.com/storage/2129/responsive-images/bedroom_design___media_library_original_658_370.jpg"
+                  id="tifive" class="room-imgs" onclick="select('tifive')" />
+              </label>
+            </div>
+
+            <div id="tisix-div" class="img-divs">
+              <label class="container">
+                <input name="tisix" type="checkbox" value="tisix" id="tisix-cb" class="checkboxes"
+                  onclick="checker('tisix')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tisix">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_a15dbbd66b9f4b6d9cfe4c6ad06f819c~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_a15dbbd66b9f4b6d9cfe4c6ad06f819c~mv2.jpg"
+                  id="tisix" class="room-imgs" onclick="select('tisix')" />
+              </label>
+            </div>
+
+            <div id="tiseven-div" class="img-divs">
+              <label class="container">
+                <input name="tiseven" type="checkbox" value="tiseven" id="tiseven-cb" class="checkboxes"
+                  onclick="checker('tiseven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tiseven">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_0e78a685c628487d99389541cd8736c7~mv2.jpg/v1/fill/w_186,h_93,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_0e78a685c628487d99389541cd8736c7~mv2.jpg"
+                  id="tiseven" class="room-imgs" onclick="select('tiseven')" />
+              </label>
+            </div>
+
+            <div id="tieight-div" class="img-divs">
+              <label class="container">
+                <input name="tieight" type="checkbox" value="tieight" id="tieight-cb" class="checkboxes"
+                  onclick="checker('tieight')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tieight">
+                <img src="https://worstroom.com/wp-content/uploads/2023/07/spare-bedroom.jpg" id="tieight"
+                  class="room-imgs" onclick="select('tieight')" />
+              </label>
+            </div>
+
+            <div id="tinine-div" class="img-divs">
+              <label class="container">
+                <input name="tinine" type="checkbox" value="tinine" id="tinine-cb" class="checkboxes"
+                  onclick="checker('tinine')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="tinine">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_83f4eb717dce476297863263bd631520~mv2.jpeg/v1/fill/w_146,h_98,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_83f4eb717dce476297863263bd631520~mv2.jpeg"
+                  id="tinine" class="room-imgs" onclick="select('tinine')" />
+              </label>
+            </div>
+
+            <div id="fo-div" class="img-divs">
+              <label class="container">
+                <input name="fo" type="checkbox" value="fo" id="fo-cb" class="checkboxes" onclick="checker('fo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fo">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_0302e6a703ef49ab8c18bdc036fb5394~mv2.jpeg/v1/fill/w_201,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_0302e6a703ef49ab8c18bdc036fb5394~mv2.jpeg"
+                  id="fo" class="room-imgs" onclick="select('fo')" />
+              </label>
+            </div>
+
+            <div id="foone-div" class="img-divs">
+              <label class="container">
+                <input name="foone" type="checkbox" value="foone" id="foone-cb" class="checkboxes"
+                  onclick="checker('foone')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="foone">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_b23c7ca28276413bb0e722e2e1500d48~mv2.jpeg/v1/fill/w_160,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_b23c7ca28276413bb0e722e2e1500d48~mv2.jpeg"
+                  id="foone" class="room-imgs" onclick="select('foone')" />
+              </label>
+            </div>
+
+            <div id="fotwo-div" class="img-divs">
+              <label class="container">
+                <input name="fotwo" type="checkbox" value="fotwo" id="fotwo-cb" class="checkboxes"
+                  onclick="checker('fotwo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fotwo">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_f3f3ed178e9943eeb0fc54884badebee~mv2.jpg/v1/fill/w_179,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_f3f3ed178e9943eeb0fc54884badebee~mv2.jpg"
+                  id="fotwo" class="room-imgs" onclick="select('fotwo')" />
+              </label>
+            </div>
+
+            <div id="fothree-div" class="img-divs">
+              <label class="container">
+                <input name="fothree" type="checkbox" value="fothree" id="fothree-cb" class="checkboxes"
+                  onclick="checker('fothree')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fothree">
+                <img
+                  src="https://static.wixstatic.com/media/09fe824f0a3b41598d6027fb0ccdf062.jpg/v1/fill/w_197,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/09fe824f0a3b41598d6027fb0ccdf062.jpg"
+                  id="fothree" class="room-imgs" onclick="select('fothree')" />
+              </label>
+            </div>
+
+            <div id="fofour-div" class="img-divs">
+              <label class="container">
+                <input name="fofour" type="checkbox" value="fofour" id="fofour-cb" class="checkboxes"
+                  onclick="checker('fofour')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fofour">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_b7ecb3d3c51e4d3c9a33227ee5de5014~mv2.jpg/v1/fill/w_224,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_b7ecb3d3c51e4d3c9a33227ee5de5014~mv2.jpg"
+                  id="fofour" class="room-imgs" onclick="select('fofour')" />
+              </label>
+            </div>
+
+            <div id="fofive-div" class="img-divs">
+              <label class="container">
+                <input name="fofive" type="checkbox" value="fofive" id="fofive-cb" class="checkboxes"
+                  onclick="checker('fofive')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fofive">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_2d8e665184934f8eac1ed3bfc63ccc1d~mv2.jpeg/v1/fill/w_173,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_2d8e665184934f8eac1ed3bfc63ccc1d~mv2.jpeg"
+                  id="fofive" class="room-imgs" onclick="select('fofive')" />
+              </label>
+            </div>
+
+            <div id="fosix-div" class="img-divs">
+              <label class="container">
+                <input name="fosix" type="checkbox" value="fosix" id="fosix-cb" class="checkboxes"
+                  onclick="checker('fosix')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fosix">
+                <img
+                  src="https://static.wixstatic.com/media/f8466d7be71345c9a24a5dda33b0b6e7.jpg/v1/fill/w_99,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/f8466d7be71345c9a24a5dda33b0b6e7.jpg"
+                  id="fosix" class="room-imgs" onclick="select('fosix')" />
+              </label>
+            </div>
+
+            <div id="foseven-div" class="img-divs">
+              <label class="container">
+                <input name="foseven" type="checkbox" value="foseven" id="foseven-cb" class="checkboxes"
+                  onclick="checker('foseven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="foseven">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_4b7349abd5794b65856caeced39e60e5~mv2.jpg/v1/fill/w_185,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_4b7349abd5794b65856caeced39e60e5~mv2.jpg"
+                  id="foseven" class="room-imgs" onclick="select('foseven')" />
+              </label>
+            </div>
+
+            <div id="foeight-div" class="img-divs">
+              <label class="container">
+                <input name="foeight" type="checkbox" value="foeight" id="foeight-cb" class="checkboxes"
+                  onclick="checker('foeight')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="foeight">
+                <img
+                  src="https://static.wixstatic.com/media/1d110d25a08446189f683b39b2cea1d5.jpg/v1/fill/w_202,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1d110d25a08446189f683b39b2cea1d5.jpg"
+                  id="foeight" class="room-imgs" onclick="select('foeight')" />
+              </label>
+            </div>
+
+            <div id="fonine-div" class="img-divs">
+              <label class="container">
+                <input name="fonine" type="checkbox" value="fonine" id="fonine-cb" class="checkboxes"
+                  onclick="checker('fonine')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fonine">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_7258b42542d4465e859cd0ba37797c29~mv2.jpeg/v1/fill/w_186,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_7258b42542d4465e859cd0ba37797c29~mv2.jpeg"
+                  id="fonine" class="room-imgs" onclick="select('fonine')" />
+              </label>
+            </div>
+
+            <div id="fi-div" class="img-divs">
+              <label class="container">
+                <input name="fi" type="checkbox" value="fi" id="fi-cb" class="checkboxes" onclick="checker('fi')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fi">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_ba4771109bae41c1a704b582d692a09d~mv2.jpg/v1/fill/w_149,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_ba4771109bae41c1a704b582d692a09d~mv2.jpg"
+                  id="fi" class="room-imgs" onclick="select('fi')" />
+              </label>
+            </div>
+
+            <div id="fione-div" class="img-divs">
+              <label class="container">
+                <input name="fione" type="checkbox" value="fione" id="fione-cb" class="checkboxes"
+                  onclick="checker('fione')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fione">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_75e7dcf3290c49b79499cf3e7d4eeab3~mv2.jpg/v1/fill/w_161,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_75e7dcf3290c49b79499cf3e7d4eeab3~mv2.jpg"
+                  id="fione" class="room-imgs" onclick="select('fione')" />
+              </label>
+            </div>
+
+            <div id="fitwo-div" class="img-divs">
+              <label class="container">
+                <input name="fitwo" type="checkbox" value="fitwo" id="fitwo-cb" class="checkboxes"
+                  onclick="checker('fitwo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fitwo">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_36c88c7bc4f943bcb753e8a4be697038~mv2.jpg/v1/fill/w_162,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_36c88c7bc4f943bcb753e8a4be697038~mv2.jpg"
+                  id="fitwo" class="room-imgs" onclick="select('fitwo')" />
+              </label>
+            </div>
+
+            <div id="fithree-div" class="img-divs">
+              <label class="container">
+                <input name="fithree" type="checkbox" value="fithree" id="fithree-cb" class="checkboxes"
+                  onclick="checker('fithree')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fithree">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_3922e285b11945cc843f488c2b0f320f~mv2.jpg/v1/fill/w_89,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3922e285b11945cc843f488c2b0f320f~mv2.jpg"
+                  id="fithree" class="room-imgs" onclick="select('fithree')" />
+              </label>
+            </div>
+
+            <div id="fifour-div" class="img-divs">
+              <label class="container">
+                <input name="fifour" type="checkbox" value="fifour" id="fifour-cb" class="checkboxes"
+                  onclick="checker('fifour')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fifour">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_9c7a93f192a04af485634ccd07440151~mv2.jpg/v1/fill/w_101,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_9c7a93f192a04af485634ccd07440151~mv2.jpg"
+                  id="fifour" class="room-imgs" onclick="select('fifour')" />
+              </label>
+            </div>
+
+            <div id="fifive-div" class="img-divs">
+              <label class="container">
+                <input name="fifive" type="checkbox" value="fifive" id="fifive-cb" class="checkboxes"
+                  onclick="checker('fifive')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fifive">
+                <img
+                  src="https://static.wixstatic.com/media/45ed679a67e2424d8746c8414dc6ecb6.jpg/v1/fill/w_108,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/45ed679a67e2424d8746c8414dc6ecb6.jpg"
+                  id="fifive" class="room-imgs" onclick="select('fifive')" />
+              </label>
+            </div>
+
+            <div id="fisix-div" class="img-divs">
+              <label class="container">
+                <input name="fisix" type="checkbox" value="fisix" id="fisix-cb" class="checkboxes"
+                  onclick="checker('fisix')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fisix">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_a6e7ba2b1f1c4edc89a4ddb9b6ae395a~mv2.jpg/v1/fill/w_193,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_a6e7ba2b1f1c4edc89a4ddb9b6ae395a~mv2.jpg"
+                  id="fisix" class="room-imgs" onclick="select('fisix')" />
+              </label>
+            </div>
+
+            <div id="fiseven-div" class="img-divs">
+              <label class="container">
+                <input name="fiseven" type="checkbox" value="fiseven" id="fiseven-cb" class="checkboxes"
+                  onclick="checker('fiseven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fiseven">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_0489c11c62d94dbd9536929b98768265~mv2.jpg/v1/fill/w_138,h_184,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_0489c11c62d94dbd9536929b98768265~mv2.jpg"
+                  id="fiseven" class="room-imgs" onclick="select('fiseven')" />
+              </label>
+            </div>
+
+            <div id="fieight-div" class="img-divs">
+              <label class="container">
+                <input name="fieight" type="checkbox" value="fieight" id="fieight-cb" class="checkboxes"
+                  onclick="checker('fieight')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="fieight">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_b6e83e5c6397429294c9016ed217d442~mv2_d_4500_3000_s_4_2.jpg/v1/fill/w_182,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_b6e83e5c6397429294c9016ed217d442~mv2_d_4500_3000_s_4_2.jpg"
+                  id="fieight" class="room-imgs" onclick="select('fieight')" />
+              </label>
+            </div>
+
+            <div id="finine-div" class="img-divs">
+              <label class="container">
+                <input name="finine" type="checkbox" value="finine" id="finine-cb" class="checkboxes"
+                  onclick="checker('finine')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="finine">
+                <img
+                  src="https://static.wixstatic.com/media/bab4240320e247e09e40fcd7d9b36993.jpg/v1/fill/w_105,h_157,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bab4240320e247e09e40fcd7d9b36993.jpg"
+                  id="finine" class="room-imgs" onclick="select('finine')" />
+              </label>
+            </div>
+
+            <div id="si-div" class="img-divs">
+              <label class="container">
+                <input name="si" type="checkbox" value="si" id="si-cb" class="checkboxes" onclick="checker('si')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="si">
+                <img
+                  src="https://static.wixstatic.com/media/8b5e364f5ded422c8dc306a54d02559a.jpg/v1/fill/w_173,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8b5e364f5ded422c8dc306a54d02559a.jpg"
+                  id="si" class="room-imgs" onclick="select('si')" />
+              </label>
+            </div>
+
+            <div id="sione-div" class="img-divs">
+              <label class="container">
+                <input name="sione" type="checkbox" value="sione" id="sione-cb" class="checkboxes"
+                  onclick="checker('sione')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sione">
+                <img
+                  src="https://static.wixstatic.com/media/e400fe6dccf64b5fa64e2b27148a3512.jpg/v1/fill/w_150,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e400fe6dccf64b5fa64e2b27148a3512.jpg"
+                  id="sione" class="room-imgs" onclick="select('sione')" />
+              </label>
+            </div>
+
+            <div id="sitwo-div" class="img-divs">
+              <label class="container">
+                <input name="sitwo" type="checkbox" value="sitwo" id="sitwo-cb" class="checkboxes"
+                  onclick="checker('sitwo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sitwo">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_f621f3561e154aa599bbac32a14be65b~mv2.jpg/v1/fill/w_161,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_f621f3561e154aa599bbac32a14be65b~mv2.jpg"
+                  id="sitwo" class="room-imgs" onclick="select('sitwo')" />
+              </label>
+            </div>
+
+            <div id="sithree-div" class="img-divs">
+              <label class="container">
+                <input name="sithree" type="checkbox" value="sithree" id="sithree-cb" class="checkboxes"
+                  onclick="checker('sithree')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sithree">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_60d37a672fe64f7d82d37c1aac28dc3b~mv2.jpg/v1/fill/w_161,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_60d37a672fe64f7d82d37c1aac28dc3b~mv2.jpg"
+                  id="sithree" class="room-imgs" onclick="select('sithree')" />
+              </label>
+            </div>
+
+            <div id="sifour-div" class="img-divs">
+              <label class="container">
+                <input name="sifour" type="checkbox" value="sifour" id="sifour-cb" class="checkboxes"
+                  onclick="checker('sifour')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sifour">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_88aeabcdf205464d883d51dd02fd5a28~mv2_d_3600_2400_s_4_2.jpg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_88aeabcdf205464d883d51dd02fd5a28~mv2_d_3600_2400_s_4_2.jpg"
+                  id="sifour" class="room-imgs" onclick="select('sifour')" />
+              </label>
+            </div>
+
+            <div id="sifive-div" class="img-divs">
+              <label class="container">
+                <input name="sifive" type="checkbox" value="sifive" id="sifive-cb" class="checkboxes"
+                  onclick="checker('sifive')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sifive">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_012254bad63d4563ab1e1d50c709685a~mv2.jpg/v1/fill/w_177,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_012254bad63d4563ab1e1d50c709685a~mv2.jpg"
+                  id="sifive" class="room-imgs" onclick="select('sifive')" />
+              </label>
+            </div>
+
+            <div id="sisix-div" class="img-divs">
+              <label class="container">
+                <input name="sisix" type="checkbox" value="sisix" id="sisix-cb" class="checkboxes"
+                  onclick="checker('sisix')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sisix">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_50bb5d6f986e49a29e1a0ad8422ad358~mv2.jpg/v1/fill/w_107,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_50bb5d6f986e49a29e1a0ad8422ad358~mv2.jpg"
+                  id="sisix" class="room-imgs" onclick="select('sisix')" />
+              </label>
+            </div>
+
+            <div id="siseven-div" class="img-divs">
+              <label class="container">
+                <input name="ssieven" type="checkbox" value="siseven" id="siseven-cb" class="checkboxes"
+                  onclick="checker('seven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="siseven">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_93791ec0c9bb4af5af03ee13afcfd73e~mv2.jpg/v1/fill/w_127,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_93791ec0c9bb4af5af03ee13afcfd73e~mv2.jpg"
+                  id="siseven" class="room-imgs" onclick="select('siseven')" />
+              </label>
+            </div>
+
+            <div id="sieight-div" class="img-divs">
+              <label class="container">
+                <input name="sieight" type="checkbox" value="sieight" id="sieight-cb" class="checkboxes"
+                  onclick="checker('sieight')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sieight">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_3dd84d97fb6144aaad6ce39a4d279daa~mv2.jpg/v1/fill/w_109,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3dd84d97fb6144aaad6ce39a4d279daa~mv2.jpg"
+                  id="sieight" class="room-imgs" onclick="select('sieight')" />
+              </label>
+            </div>
+
+            <div id="sinine-div" class="img-divs">
+              <label class="container">
+                <input name="sinine" type="checkbox" value="sinine" id="sinine-cb" class="checkboxes"
+                  onclick="checker('sinine')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sinine">
+                <img
+                  src="https://static.wixstatic.com/media/cb6cbf2fc50c44199a28c316377c3a78.jpg/v1/fill/w_172,h_115,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/cb6cbf2fc50c44199a28c316377c3a78.jpg"
+                  id="sinine" class="room-imgs" onclick="select('sinine')" />
+              </label>
+            </div>
+
+            <div id="se-div" class="img-divs">
+              <label class="container">
+                <input name="se" type="checkbox" value="se" id="se-cb" class="checkboxes" onclick="checker('se')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="se">
+                <img
+                  src="https://static.wixstatic.com/media/a129d3a6a23445c78ed0949221964ed9.jpg/v1/fill/w_181,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/a129d3a6a23445c78ed0949221964ed9.jpg"
+                  id="se" class="room-imgs" onclick="select('se')" />
+              </label>
+            </div>
+
+            <div id="seone-div" class="img-divs">
+              <label class="container">
+                <input name="seone" type="checkbox" value="seone" id="seone-cb" class="checkboxes"
+                  onclick="checker('seone')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="seone">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_8bf3f5bcde444fbcaa5c5b5bfa9ba38a~mv2.jpg/v1/fill/w_216,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_8bf3f5bcde444fbcaa5c5b5bfa9ba38a~mv2.jpg"
+                  id="seone" class="room-imgs" onclick="select('seone')" />
+              </label>
+            </div>
+
+            <div id="setwo-div" class="img-divs">
+              <label class="container">
+                <input name="setwo" type="checkbox" value="setwo" id="setwo-cb" class="checkboxes"
+                  onclick="checker('setwo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="setwo">
+                <img
+                  src="https://static.wixstatic.com/media/161acbe535bc482183b7355924e103be.jpg/v1/fill/w_223,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/161acbe535bc482183b7355924e103be.jpg"
+                  id="setwo" class="room-imgs" onclick="select('setwo')" />
+              </label>
+            </div>
+
+            <div id="sethree-div" class="img-divs">
+              <label class="container">
+                <input name="sethree" type="checkbox" value="sethree" id="sethree-cb" class="checkboxes"
+                  onclick="checker('sethree')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sethree">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_222fad5cb9984ad2a130bbc8ff114f70~mv2_d_5616_3699_s_4_2.jpg/v1/fill/w_273,h_180,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_222fad5cb9984ad2a130bbc8ff114f70~mv2_d_5616_3699_s_4_2.jpg"
+                  id="sethree" class="room-imgs" onclick="select('sethree')" />
+              </label>
+            </div>
+
+            <div id="sefour-div" class="img-divs">
+              <label class="container">
+                <input name="sefour" type="checkbox" value="sefour" id="sefour-cb" class="checkboxes"
+                  onclick="checker('sefour')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sefour">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_3f15e08e04bd4a698926aaf02880943a~mv2.jpeg/v1/fill/w_234,h_156,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3f15e08e04bd4a698926aaf02880943a~mv2.jpeg"
+                  id="sefour" class="room-imgs" onclick="select('sefour')" />
+              </label>
+            </div>
+
+            <div id="sefive-div" class="img-divs">
+              <label class="container">
+                <input name="sefive" type="checkbox" value="sefive" id="sefive-cb" class="checkboxes"
+                  onclick="checker('sefive')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sefive">
+                <img
+                  src="https://static.wixstatic.com/media/7a36d45d01a14b39b91c5ab6acec9ad7.jpg/v1/fill/w_229,h_122,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/7a36d45d01a14b39b91c5ab6acec9ad7.jpg"
+                  id="sefive" class="room-imgs" onclick="select('sefive')" />
+              </label>
+            </div>
+
+            <div id="sesix-div" class="img-divs">
+              <label class="container">
+                <input name="sesix" type="checkbox" value="sesix" id="sesix-cb" class="checkboxes"
+                  onclick="checker('sesix')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="sesix">
+                <img
+                  src="https://static.wixstatic.com/media/0f0d9a5fcc2b4d1bbc575b1e2265f8be.jpg/v1/fill/w_203,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0f0d9a5fcc2b4d1bbc575b1e2265f8be.jpg"
+                  id="sesix" class="room-imgs" onclick="select('sesix')" />
+              </label>
+            </div>
+
+            <div id="seseven-div" class="img-divs">
+              <label class="container">
+                <input name="seseven" type="checkbox" value="seseven" id="seseven-cb" class="checkboxes"
+                  onclick="checker('seseven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="seseven">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_c7f91d6662ca4e65b6e74902720704c9~mv2.jpeg/v1/fill/w_179,h_134,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_c7f91d6662ca4e65b6e74902720704c9~mv2.jpeg"
+                  id="seseven" class="room-imgs" onclick="select('seseven')" />
+              </label>
+            </div>
+
+            <div id="seeight-div" class="img-divs">
+              <label class="container">
+                <input name="seeight" type="checkbox" value="seeight" id="seeight-cb" class="checkboxes"
+                  onclick="checker('seeight')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="seeight">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_870ebe41e0f049bca0aa2de08943f91c~mv2_d_3976_2652_s_4_2.jpg/v1/fill/w_189,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_870ebe41e0f049bca0aa2de08943f91c~mv2_d_3976_2652_s_4_2.jpg"
+                  id="seeight" class="room-imgs" onclick="select('seeight')" />
+              </label>
+            </div>
+
+            <div id="senine-div" class="img-divs">
+              <label class="container">
+                <input name="senine" type="checkbox" value="senine" id="senine-cb" class="checkboxes"
+                  onclick="checker('senine')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="senine">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_21dbdd79270a44b8abe0d6177d2ac1f9~mv2.jpg/v1/fill/w_190,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_21dbdd79270a44b8abe0d6177d2ac1f9~mv2.jpg"
+                  id="senine" class="room-imgs" onclick="select('senine')" />
+              </label>
+            </div>
+
+            <div id="ei-div" class="img-divs">
+              <label class="container">
+                <input name="ei" type="checkbox" value="ei" id="ei-cb" class="checkboxes" onclick="checker('ei')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="ei">
+                <img
+                  src="https://static.wixstatic.com/media/580b4896ab1d4efb846d84f9f9e670fe.jpg/v1/fill/w_134,h_207,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/580b4896ab1d4efb846d84f9f9e670fe.jpg"
+                  id="ei" class="room-imgs" onclick="select('ei')" />
+              </label>
+            </div>
+
+            <div id="eione-div" class="img-divs">
+              <label class="container">
+                <input name="eione" type="checkbox" value="eione" id="eione-cb" class="checkboxes"
+                  onclick="checker('eione')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eione">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_d55eb5210bad40f89a7f2141456ea386~mv2.jpg/v1/fill/w_152,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_d55eb5210bad40f89a7f2141456ea386~mv2.jpg"
+                  id="eione" class="room-imgs" onclick="select('eione')" />
+              </label>
+            </div>
+
+            <div id="eitwo-div" class="img-divs">
+              <label class="container">
+                <input name="eitwo" type="checkbox" value="eitwo" id="eitwo-cb" class="checkboxes"
+                  onclick="checker('eitwo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eitwo">
+                <img
+                  src="https://static.wixstatic.com/media/0ddd01f7de574b06b02938f24f22836a.jpg/v1/fill/w_182,h_122,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0ddd01f7de574b06b02938f24f22836a.jpg"
+                  id="eitwo" class="room-imgs" onclick="select('eitwo')" />
+              </label>
+            </div>
+
+            <div id="eithree-div" class="img-divs">
+              <label class="container">
+                <input name="eithree" type="checkbox" value="teihree" id="eithree-cb" class="checkboxes"
+                  onclick="checker('eithree')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eithree">
+                <img
+                  src="https://static.wixstatic.com/media/ffe1408a8353ca4a6e4f5aa8c3d79f8c.jpg/v1/fill/w_941,h_410,al_c,q_85,enc_auto/ffe1408a8353ca4a6e4f5aa8c3d79f8c.jpg"
+                  id="eithree" class="room-imgs" onclick="select('eithree')" />
+              </label>
+            </div>
+
+            <div id="eifour-div" class="img-divs">
+              <label class="container">
+                <input name="eifour" type="checkbox" value="eifour" id="eifour-cb" class="checkboxes"
+                  onclick="checker('eifour')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eifour">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_803d69afb2254d049165f77654c2ae43~mv2.jpg/v1/fill/w_980,h_372,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_803d69afb2254d049165f77654c2ae43~mv2.jpg"
+                  id="eifour" class="room-imgs" onclick="select('eifour')" />
+              </label>
+            </div>
+
+            <div id="eifive-div" class="img-divs">
+              <label class="container">
+                <input name="eifive" type="checkbox" value="eifive" id="eifive-cb" class="checkboxes"
+                  onclick="checker('eifive')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eifive">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_aa36cf8cc49b488390d27c5a101cc871~mv2.jpg/v1/fill/w_174,h_98,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_aa36cf8cc49b488390d27c5a101cc871~mv2.jpg"
+                  id="eifive" class="room-imgs" onclick="select('eifive')" />
+              </label>
+            </div>
+
+            <div id="eisix-div" class="img-divs">
+              <label class="container">
+                <input name="eisix" type="checkbox" value="eisix" id="eisix-cb" class="checkboxes"
+                  onclick="checker('eisix')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eisix">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_f560ea07caca4927a10f5e67f995ce46~mv2.jpg/v1/fill/w_152,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_f560ea07caca4927a10f5e67f995ce46~mv2.jpg"
+                  id="eisix" class="room-imgs" onclick="select('eisix')" />
+              </label>
+            </div>
+
+            <div id="eiseven-div" class="img-divs">
+              <label class="container">
+                <input name="eiseven" type="checkbox" value="eiseven" id="eiseven-cb" class="checkboxes"
+                  onclick="checker('eiseven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eiseven">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_03c8fd3de40e4d01a04a2c8a21f7895a~mv2.jpg/v1/fill/w_120,h_180,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_03c8fd3de40e4d01a04a2c8a21f7895a~mv2.jpg"
+                  id="eiseven" class="room-imgs" onclick="select('eiseven')" />
+              </label>
+            </div>
+
+            <div id="eieight-div" class="img-divs">
+              <label class="container">
+                <input name="eieight" type="checkbox" value="eieight" id="eieight-cb" class="checkboxes"
+                  onclick="checker('eieight')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="eieight">
+                <img
+                  src="https://static.wixstatic.com/media/ba46766b787c47bcb1e1d359fec9d9e0.jpg/v1/fill/w_980,h_631,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba46766b787c47bcb1e1d359fec9d9e0.jpg"
+                  id="eieight" class="room-imgs" onclick="select('eieight')" />
+              </label>
+            </div>
+
+            <div id="einine-div" class="img-divs">
+              <label class="container">
+                <input name="einine" type="checkbox" value="einine" id="einine-cb" class="checkboxes"
+                  onclick="checker('einine')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="einine">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_2172a31fa7f843b684803479d16b76d5~mv2.jpg/v1/fill/w_180,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_2172a31fa7f843b684803479d16b76d5~mv2.jpg"
+                  id="einine" class="room-imgs" onclick="select('einine')" />
+              </label>
+            </div>
+
+            <div id="ni-div" class="img-divs">
+              <label class="container">
+                <input name="ni" type="checkbox" value="ni" id="ni-cb" class="checkboxes" onclick="checker('ni')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="ni">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_8b9e1da11da84f529e4294c36e352760~mv2.jpg/v1/fill/w_175,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_8b9e1da11da84f529e4294c36e352760~mv2.jpg"
+                  id="ni" class="room-imgs" onclick="select('ni')" />
+              </label>
+            </div>
+
+            <div id="nione-div" class="img-divs">
+              <label class="container">
+                <input name="nione" type="checkbox" value="nione" id="nione-cb" class="checkboxes"
+                  onclick="checker('nione')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="nione">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_6f56c2c72df649dda8ce412ae6d41769~mv2.jpg/v1/fill/w_189,h_126,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_6f56c2c72df649dda8ce412ae6d41769~mv2.jpg"
+                  id="nione" class="room-imgs" onclick="select('nione')" />
+              </label>
+            </div>
+
+            <div id="nitwo-div" class="img-divs">
+              <label class="container">
+                <input name="nitwo" type="checkbox" value="nitwo" id="nitwo-cb" class="checkboxes"
+                  onclick="checker('nitwo')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="nitwo">
+                <img
+                  src="https://static.wixstatic.com/media/ca28ab858503441cb37f2f64d3a10764.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ca28ab858503441cb37f2f64d3a10764.jpg"
+                  id="nitwo" class="room-imgs" onclick="select('nitwo')" />
+              </label>
+            </div>
+
+            <div id="nithree-div" class="img-divs">
+              <label class="container">
+                <input name="nithree" type="checkbox" value="nithree" id="nithree-cb" class="checkboxes"
+                  onclick="checker('nithree')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="nithree">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_910b0c82f5774d71a6a9cf62134b3f21~mv2.jpg/v1/fill/w_183,h_122,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_910b0c82f5774d71a6a9cf62134b3f21~mv2.jpg"
+                  id="nithree" class="room-imgs" onclick="select('nithree')" />
+              </label>
+            </div>
+
+            <div id="nifour-div" class="img-divs">
+              <label class="container">
+                <input name="nifour" type="checkbox" value="nifour" id="nifour-cb" class="checkboxes"
+                  onclick="checker('nifour')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="nifour">
+                <img
+                  src="https://static.wixstatic.com/media/06ba02cd526a4d67bd8f88d9554576f7.jpg/v1/fill/w_150,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/06ba02cd526a4d67bd8f88d9554576f7.jpg"
+                  id="nifour" class="room-imgs" onclick="select('nifour')" />
+              </label>
+            </div>
+
+            <div id="nifive-div" class="img-divs">
+              <label class="container">
+                <input name="nifive" type="checkbox" value="nifive" id="nifive-cb" class="checkboxes"
+                  onclick="checker('nifive')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="nifive">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_7683aa5a92d246e99024029b3a3226ea~mv2.jpg/v1/fill/w_980,h_1023,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_7683aa5a92d246e99024029b3a3226ea~mv2.jpg"
+                  id="nifive" class="room-imgs" onclick="select('nifive')" />
+              </label>
+            </div>
+
+            <div id="nisix-div" class="img-divs">
+              <label class="container">
+                <input name="nisix" type="checkbox" value="nisix" id="nisix-cb" class="checkboxes"
+                  onclick="checker('nisix')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="nisix">
+                <img
+                  src="https://static.wixstatic.com/media/11062b_dc8968afee424a34b57d4a68a3953ff7~mv2.jpg/v1/fill/w_112,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_dc8968afee424a34b57d4a68a3953ff7~mv2.jpg"
+                  id="nisix" class="room-imgs" onclick="select('nisix')" />
+              </label>
+            </div>
+
+            <div id="niseven-div" class="img-divs">
+              <label class="container">
+                <input name="niseven" type="checkbox" value="niseven" id="niseven-cb" class="checkboxes"
+                  onclick="checker('niseven')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label for="niseven">
+                <img
+                  src="https://static.wixstatic.com/media/44b5318e1622473b8db869fd11f66ca3.jpg/v1/fill/w_160,h_107,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/44b5318e1622473b8db869fd11f66ca3.jpg"
+                  id="niseven" class="room-imgs" onclick="select('niseven')" />
+              </label>
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+   </div>
+
+    <div id="pg2-div" class="page">
+      <h1 id="confirm-head">Your Main Styles Are...</h1>
+      <br>
+      <h1 id="main-style"></h1>
+<div id="real-output-div">
+      <h1 id="output-img-style1" class="output-img-styles"></h1>
+      <img src="" id="output-img1" class="output-imgs"/>
+      <h1 id="output-img-style2" class="output-img-styles"></h1>
+      <img src="" id="output-img2" class="output-imgs"/>
+      <h1 id="output-img-style3" class="output-img-styles"></h1>
+      <img src="" id="output-img3" class="output-imgs"/>
+      <!--<script>retrieve();</script>-->
+    </div>
+    </div>
+  </div>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
